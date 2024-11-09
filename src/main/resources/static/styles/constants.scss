@@ -1,0 +1,131 @@
+$background: #000010;
+$text: #D8DBEE;
+$accent: #37FF8B;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: $text;
+}
+a {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  color: $accent;
+}
+h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3em;
+  color: $text;
+}
+strong {
+  color: $accent;
+}
+h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2.5em;
+  color: $text;
+}
+h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2em;
+  color: $text;
+}
+h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.75em;
+  color: $text;
+}
+h5 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 1.5em;
+  color: $text;
+}
+h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  color: $text;
+}
+
+
+button {
+  border: 1px solid $accent !important;
+  background: transparent;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  color: $accent;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transition: background 0.5s, color 0.5s;
+}
+button:hover, button:focus, button:active {
+  background: $accent;
+  color: $background;
+}
+
+
+body {
+  background: $background;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+
+::-moz-selection {
+  color: $background;
+  background: $text;
+}
+::selection {
+  color: $background;
+  background: $text;
+}
+
+
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $accent;
+  border-radius: 0.15em;
+}
+::-webkit-resizer {
+  display: none;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
