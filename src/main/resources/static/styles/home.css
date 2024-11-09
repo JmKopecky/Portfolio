@@ -17,6 +17,7 @@ a {
   font-weight: 300;
   font-style: italic;
   color: #37FF8B;
+  text-decoration: none;
 }
 
 h1 {
@@ -98,6 +99,9 @@ button:hover, button:focus, button:active {
 
 body {
   background: #000010;
+}
+
+#site-container {
   padding-left: 10vw;
   padding-right: 10vw;
 }
@@ -136,7 +140,58 @@ body {
 #header-container {
   position: fixed;
   top: 0;
+  width: 90%;
+  height: 6vh;
+  padding: 2vh 5vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#header-container #header-left {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 16, 0.8);
+}
+#header-container #header-left a {
   width: 100%;
+  height: 100%;
+}
+#header-container #header-right {
+  display: flex;
+  flex-flow: row;
+  gap: 1vw;
+  align-items: center;
+  z-index: 9999;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 16, 0.8);
+  padding-left: 1em;
+}
+#header-container #header-right a {
+  z-index: 9999;
+}
+#header-container #header-right #header-show-button {
+  border: unset !important;
+  padding: unset !important;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#header-container #header-right #header-show-button i {
+  color: #37FF8B;
+  fill: #37FF8B;
+  font-size: 6vh;
+  z-index: 9999;
+}
+#header-container #header-right #header-show-button[data-headeropen=true] {
+  margin-left: 2vw;
+}
+#header-container #header-right #header-show-button:hover, #header-container #header-right #header-show-button:focus {
+  background: unset !important;
+  color: unset !important;
 }
 
 #footer-container {

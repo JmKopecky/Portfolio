@@ -11,52 +11,63 @@
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
     <script src="/js/lenis.js"></script>
+    <script src="/js/header.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>-->
 </head>
 <body>
 
-
 <div id="header-container">
-
-</div>
-
-
-<div id="hero-container">
-    <div id="hero-left">
-        <h1 class="hero-heading">I'm <strong>Joseph Kopecky</strong></h1>
-        <p>As an Aspiring Software Engineer, the Computer is My Domain.</p>
+    <div id="header-left">
+        <a href="/"><img src="/images/logo.svg" alt="header logo" style="width:100%;height:100%;"></a>
     </div>
-    <div id="hero-right">
-        <a><button>Contact Me</button></a>
-        <a><button>Download Resume</button></a>
+    <div id="header-right">
+        <a href="#about-and-skills-container" style="display: none;">Skills</a>
+        <a href="#projects-container" style="display: none;">Projects</a>
+        <a href="#awards-container" style="display: none;">Awards</a>
+        <a href="#contact-container" style="display: none;">Contact</a>
+        <button id="header-show-button" data-headeropen="false" onclick="headerButtonClick()"><i class="fa-solid fa-bars"></i></button>
     </div>
 </div>
 
 
-<div id="about-and-skills-container">
-    <div id="about-right">
-        <h1>//Hello World!</h1>
+<div id="site-container">
+    <div id="hero-container">
+        <div id="hero-left">
+            <h1 class="hero-heading">I'm <strong>Joseph Kopecky</strong></h1>
+            <p>As an Aspiring Software Engineer, the Computer is My Domain.</p>
+        </div>
+        <div id="hero-right">
+            <a><button>Contact Me</button></a>
+            <a><button>Download Resume</button></a>
+        </div>
     </div>
-    <div id="about-left">
 
+
+    <div id="about-and-skills-container">
+        <div id="about-right">
+            <h1>//Hello World!</h1>
+        </div>
+        <div id="about-left">
+
+        </div>
     </div>
-</div>
 
 
-<div id="projects-container">
-    <h1>//Builds</h1>
-</div>
+    <div id="projects-container">
+        <h1>//Builds</h1>
+    </div>
 
 
-<div id="awards-container">
-    <h1>//Awards</h1>
-</div>
+    <div id="awards-container">
+        <h1>//Awards</h1>
+    </div>
 
 
-<div id="contact-container">
-    <h1>//Get In Touch</h1>
-    <!--I'm looking for a summer job, and maybe something more long term during college.-->
+    <div id="contact-container">
+        <h1>//Get In Touch</h1>
+        <!--I'm looking for a summer job, and maybe something more long term during college.-->
+    </div>
 </div>
 
 

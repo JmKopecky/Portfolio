@@ -22,6 +22,7 @@ a {
   font-weight: 300;
   font-style: italic;
   color: $accent;
+  text-decoration: none;
 }
 h1 {
   font-family: "Inter", sans-serif;
@@ -97,6 +98,9 @@ button:hover, button:focus, button:active {
 
 body {
   background: $background;
+}
+
+#site-container {
   padding-left: 10vw;
   padding-right: 10vw;
 }

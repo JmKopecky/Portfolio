@@ -1,5 +1,57 @@
 #header-container {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 90%;
+  height: 6vh;
+  padding: 2vh 5vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  #header-left {
+    width: 6vh;
+    height: 6vh;
+    border-radius: 1em;
+    background-color: transparentize($background, 0.2);
+    a {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  #header-right {
+    display: flex;
+    flex-flow: row;
+    gap: 1vw;
+    align-items: center;
+    z-index: 9999;
+    border-radius: 1em;
+    background-color: transparentize($background, 0.2);
+    padding-left: 1em;
+    a {
+      z-index: 9999;
+    }
+    #header-show-button {
+      border: unset !important;
+      padding: unset !important;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+
+      i {
+        color: $accent;
+        fill: $accent;
+        font-size: 6vh;
+        z-index: 9999;
+      }
+    }
+    #header-show-button[data-headeropen="true"] {
+      margin-left: 2vw;
+    }
+    #header-show-button:hover, #header-show-button:focus {
+      background: unset !important;
+      color: unset !important;
+    }
+  }
 }
