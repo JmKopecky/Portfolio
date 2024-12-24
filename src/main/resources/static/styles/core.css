@@ -112,6 +112,7 @@ body {
 
 .page-content {
   min-height: 100vh;
+  width: 100%;
 }
 
 ::-moz-selection {
@@ -155,6 +156,7 @@ body {
   padding-left: 3%;
   padding-right: 3%;
   padding-top: 1vh;
+  z-index: 999;
 }
 #header #header-right {
   display: flex;
@@ -224,6 +226,34 @@ footer #footer-links {
   height: 100%;
   object-fit: cover;
   border-radius: 30%;
+}
+#home-page #about {
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 80%;
+  display: flex;
+  flex-flow: row;
+  align-items: start;
+  min-height: 50vh;
+}
+#home-page #about #about-header {
+  flex: 1;
+  position: sticky;
+  top: 45vh;
+}
+#home-page #about #about-content {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  gap: 10vw;
+}
+#home-page #about #about-content #about-left, #home-page #about #about-content #about-right {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 #styleguide-page {

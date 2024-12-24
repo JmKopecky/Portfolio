@@ -14,7 +14,7 @@
     <script src="/js/lenis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/@barba/core" type="text/javascript"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body data-barba="wrapper">
@@ -32,10 +32,12 @@
 </div>
 
 
-<div data-barba="container" data-barba-namespace="page" class="page-content">
+<div data-barba="container" data-barba-namespace="page" class="page-content" style="position:absolute;">
 
 
     <div id="home-page">
+
+
         <div id="hero">
             <div id="hero-details">
                 <h1 id="hero-name">I'm Joseph Kopecky!</h1>
@@ -45,30 +47,43 @@
                 <img id="hero-image" alt="headshot image" src="https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway">
             </div>
         </div>
+
+
         <div id="about">
-
+            <h1 id="about-header">//About</h1>
+            <div id="about-content">
+                <div id="about-left">
+                    <h3>My Story</h3>
+                    <p>Lorem ipsum dolor sit amet. Consectur apdiscing amet.</p>
+                </div>
+                <div id="about-right">
+                    <h3>My Interests & Hobbies</h3>
+                    <p>Lorem ipsum dolor sit amet. Consectur apdiscing amet.</p>
+                </div>
+            </div>
         </div>
-        <div id="skills">
 
+
+        <div id="skills">
+            <h1 id="skills-header">//Skills</h1>
         </div>
         <div id="projects">
-
+            <h1 id="projects-header">//Projects</h1>
         </div>
         <div id="contact">
-
+            <h1 id="contact-header">//Contact Me</h1>
         </div>
     </div>
 
 
+    <footer>
+        <em id="footer-message">Made from scratch by Joseph Kopecky</em>
+        <div id="footer-links">
+            <a href="/styleguide">Style Guide</a>
+        </div>
+    </footer>
+
 </div>
-
-
-<footer>
-    <em id="footer-message">Made from scratch by Joseph Kopecky</em>
-    <div id="footer-links">
-        <a href="/styleguide">Style Guide</a>
-    </div>
-</footer>
 
 
 </body>

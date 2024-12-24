@@ -1,7 +1,6 @@
 #home-page {
   padding-top: 15vh;
 
-
   #hero {
     height: 50vh;
     display: flex;
@@ -41,5 +40,34 @@
     }
   }
 
+
+  #about {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 80%;
+    display: flex;
+    flex-flow: row;
+    align-items: start;
+    min-height: 50vh;
+    #about-header {
+      flex: 1;
+      position: sticky;
+      top: 45vh;
+    }
+    #about-content {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      width: 100%;
+      gap: 10vw;
+      #about-left, #about-right {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      }
+    }
+  }
 
 }
