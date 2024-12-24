@@ -1,9 +1,19 @@
-#footer-container {
+footer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1em;
-  p {
-    text-align: center;
+  flex-flow: row;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+
+  #footer-message {
+    width: 50%;
+  }
+  #footer-links {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
   }
 }

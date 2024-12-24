@@ -1,5 +1,45 @@
-@import 'constants';
-@import 'header';
-@import 'footer';
+#home-page {
+  padding-top: 15vh;
 
-@import 'home/hero';
+
+  #hero {
+    height: 50vh;
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vw;
+    #hero-details {
+      display: flex;
+      flex-flow:column;
+      align-items: start;
+      justify-content: center;
+      gap: 1vh;
+      #hero-name {
+        font-size: 5em;
+        @media (width <= 1300px) {
+          font-size: 4.5em;
+        }
+      }
+    }
+    #hero-headshot {
+      aspect-ratio: 1/1;
+      max-width: 40vh;
+      max-height: 40vh;
+      @media (width <= 1275px) {
+        max-width: 35vh;
+        max-height: 35vh;
+      }
+      #hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30%;
+      }
+    }
+  }
+
+
+}

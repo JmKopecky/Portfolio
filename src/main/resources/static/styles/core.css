@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  margin: 0;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #EEEEEE;
+}
+
+a {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  color: #EEEEEE;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3em;
+  color: #EEEEEE;
+}
+
+strong {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  color: #EEEEEE;
+}
+
+em {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  color: #EEEEEE;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2.5em;
+  color: #EEEEEE;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2em;
+  color: #EEEEEE;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.75em;
+  color: #EEEEEE;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 1.5em;
+  color: #EEEEEE;
+}
+
+h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  color: #EEEEEE;
+}
+
+button {
+  border: 1px solid #EEEEEE !important;
+  background: transparent;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  color: #EEEEEE;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transition: background 0.5s, color 0.5s;
+}
+
+button:hover, button:focus, button:active {
+  background: #EEEEEE;
+  color: #111111;
+}
+
+body {
+  background: #111111;
+}
+
+.page-content {
+  min-height: 100vh;
+}
+
+::-moz-selection {
+  color: #111111;
+  background: #EEEEEE;
+}
+
+::selection {
+  color: #111111;
+  background: #EEEEEE;
+}
+
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EEEEEE;
+  border-radius: 0.15em;
+}
+
+::-webkit-resizer {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1vh;
+}
+#header #header-right {
+  display: flex;
+  gap: 1em;
+}
+
+footer {
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+}
+footer #footer-message {
+  width: 50%;
+}
+footer #footer-links {
+  width: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-page {
+  padding-top: 15vh;
+}
+#home-page #hero {
+  height: 50vh;
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+}
+#home-page #hero #hero-details {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1vh;
+}
+#home-page #hero #hero-details #hero-name {
+  font-size: 5em;
+}
+@media (width <= 1300px) {
+  #home-page #hero #hero-details #hero-name {
+    font-size: 4.5em;
+  }
+}
+#home-page #hero #hero-headshot {
+  aspect-ratio: 1/1;
+  max-width: 40vh;
+  max-height: 40vh;
+}
+@media (width <= 1275px) {
+  #home-page #hero #hero-headshot {
+    max-width: 35vh;
+    max-height: 35vh;
+  }
+}
+#home-page #hero #hero-headshot #hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30%;
+}
+
+#styleguide-page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10vh;
+}
+
+/*# sourceMappingURL=core.css.map */

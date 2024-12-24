@@ -1,3 +1,11 @@
-
+#header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 /*# sourceMappingURL=header.css.map */

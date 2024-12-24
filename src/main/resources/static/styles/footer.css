@@ -1,3 +1,21 @@
-
+#footer {
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+}
+#footer #footer-message {
+  font-size: 1.25em;
+  width: 50%;
+}
+#footer #footer-links {
+  width: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=footer.css.map */
