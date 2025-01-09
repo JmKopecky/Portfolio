@@ -8,7 +8,7 @@ $primary: #EEEEEE;
   margin: 0;
 }
 
-p {
+p, label {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -22,6 +22,17 @@ a {
   font-style: italic;
   color: $primary;
   text-decoration: none;
+}
+input {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary;
+  background: transparent;
+  border: 1px solid $primary;
+  border-radius: 1em;
+  padding: 0.5em;
 }
 h1 {
   font-family: "Inter", sans-serif;
@@ -93,8 +104,9 @@ button {
   width: 100%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
+  font-size: 1.25em;
   transition: background 0.5s, color 0.5s;
 }
 button:hover, button:focus, button:active {
