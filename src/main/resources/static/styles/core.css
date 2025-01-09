@@ -8,7 +8,11 @@ p, label {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: #EEEEEE;
+  color: #F7F4F3;
+}
+
+accenttext {
+  color: #4A9FD3;
 }
 
 a {
@@ -16,8 +20,30 @@ a {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: italic;
-  color: #EEEEEE;
+  color: #F7F4F3;
   text-decoration: none;
+}
+
+a.hoveranim {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: #4A9FD3;
+  text-underline-offset: 2px;
+}
+
+a.hoveranim::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #4A9FD3;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+a.hoveranim:hover::after {
+  width: 100%;
 }
 
 input {
@@ -25,9 +51,9 @@ input {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: #EEEEEE;
+  color: #F7F4F3;
   background: transparent;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #F7F4F3;
   border-radius: 1em;
   padding: 0.5em;
 }
@@ -38,20 +64,20 @@ h1 {
   font-weight: 700;
   font-style: normal;
   font-size: 3em;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 strong {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 em {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 h2 {
@@ -60,7 +86,7 @@ h2 {
   font-weight: 650;
   font-style: normal;
   font-size: 2.5em;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 h3 {
@@ -69,7 +95,7 @@ h3 {
   font-weight: 650;
   font-style: normal;
   font-size: 2em;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 h4 {
@@ -78,7 +104,7 @@ h4 {
   font-weight: 600;
   font-style: normal;
   font-size: 1.75em;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 h5 {
@@ -87,7 +113,7 @@ h5 {
   font-weight: 550;
   font-style: normal;
   font-size: 1.5em;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 h6 {
@@ -96,15 +122,15 @@ h6 {
   font-weight: 500;
   font-style: normal;
   font-size: 1.25em;
-  color: #EEEEEE;
+  color: #F7F4F3;
 }
 
 button {
-  border: 1px solid #EEEEEE !important;
+  border: 1px solid #4A9FD3 !important;
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
-  color: #EEEEEE;
+  color: #4A9FD3;
   width: 100%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -115,12 +141,12 @@ button {
 }
 
 button:hover, button:focus, button:active {
-  background: #EEEEEE;
-  color: #111111;
+  background: #4A9FD3;
+  color: #0A0A0B;
 }
 
 body {
-  background: #111111;
+  background: #0A0A0B;
 }
 
 .page-content {
@@ -129,13 +155,13 @@ body {
 }
 
 ::-moz-selection {
-  color: #111111;
-  background: #EEEEEE;
+  color: #0A0A0B;
+  background: #F7F4F3;
 }
 
 ::selection {
-  color: #111111;
-  background: #EEEEEE;
+  color: #0A0A0B;
+  background: #F7F4F3;
 }
 
 ::-webkit-scrollbar {
@@ -147,7 +173,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #EEEEEE;
+  background: #F7F4F3;
   border-radius: 0.15em;
 }
 
@@ -175,7 +201,6 @@ body {
   display: flex;
   gap: 1em;
 }
-
 footer {
   display: flex;
   flex-flow: row;
@@ -308,6 +333,7 @@ footer #footer-links {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 1em;
 }
 #home-page #contact {
   width: 70%;
@@ -348,6 +374,9 @@ footer #footer-links {
 }
 #home-page #contact #contact-align-container #contact-form * {
   width: 100%;
+}
+#home-page #contact #contact-align-container #contact-form button {
+  width: 60%;
 }
 
 #styleguide-page {

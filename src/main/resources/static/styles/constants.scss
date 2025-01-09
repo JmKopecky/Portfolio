@@ -1,5 +1,6 @@
-$secondary: #111111;
-$primary: #EEEEEE;
+$secondary: #0A0A0B;
+$primary: #F7F4F3;
+$accent: #4A9FD3;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -15,6 +16,9 @@ p, label {
   font-style: normal;
   color: $primary;
 }
+accenttext {
+  color: $accent;
+}
 a {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -23,6 +27,27 @@ a {
   color: $primary;
   text-decoration: none;
 }
+a.hoveranim {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: $accent;
+  text-underline-offset: 2px;
+}
+a.hoveranim::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: $accent;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: width 0.5s ease-in-out;
+}
+a.hoveranim:hover::after {
+  width: 100%;
+}
+
+
 input {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -96,11 +121,11 @@ h6 {
 
 
 button {
-  border: 1px solid $primary !important;
+  border: 1px solid $accent !important;
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
-  color: $primary;
+  color: $accent;
   width: 100%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -110,7 +135,7 @@ button {
   transition: background 0.5s, color 0.5s;
 }
 button:hover, button:focus, button:active {
-  background: $primary;
+  background: $accent;
   color: $secondary;
 }
 
