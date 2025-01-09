@@ -201,6 +201,19 @@ body {
   display: flex;
   gap: 1em;
 }
+#header .header-link {
+  transition: color 0.5s ease-in-out;
+}
+#header .header-link * {
+  transition: color 0.5s ease-in-out;
+}
+#header .header-link:hover {
+  color: #4A9FD3 !important;
+}
+#header .header-link:hover * {
+  color: #4A9FD3 !important;
+}
+
 footer {
   display: flex;
   flex-flow: row;
