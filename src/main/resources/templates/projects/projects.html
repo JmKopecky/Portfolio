@@ -14,7 +14,7 @@
     <script src="/js/lenis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/@barba/core" type="text/javascript"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body data-barba="wrapper">
@@ -32,34 +32,42 @@
 </div>
 
 
-<div data-barba="container" data-barba-namespace="page" class="page-content">
+<div data-barba="container" data-barba-namespace="page" class="page-content" style="position:absolute;">
 
 
-    <div id="styleguide-page">
-        <h1>Style Guide</h1>
-        <br>
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-        <p>Paragraph text</p>
-        <strong>Strong text</strong>
-        <em>Emphasized text</em>
-        <a href="/styleguide">Link text</a>
+    <div id="projects-page">
+
+        <h1 id="project-header">Projects</h1>
+
+        <div id="project-container">
+            <div class="project-tile" th:each="project:${projects}">
+                <div class="left">
+                    <div class="project-image-container">
+                        <img class="project-image" th:alt="${project.getTitle()}" th:src="${project.getImageUrl()}">
+                    </div>
+                    <h3 th:text="${project.getTitle()}"></h3>
+                    <a th:href="${project.getProjectUrl()}"><button>Learn More</button></a>
+                </div>
+                <div class="right">
+                    <p th:text="${project.getShortDesc()}"></p>
+                    <ul>
+                        <li th:each="tech:${project.getTechList()}"><p th:text="${tech}"></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+
+    <footer>
+        <em id="footer-message">Made from scratch by Joseph Kopecky</em>
+        <div id="footer-links">
+            <a class="hoveranim" href="/styleguide">Style Guide</a>
+        </div>
+    </footer>
 
 </div>
-
-
-<footer>
-    <em id="footer-message">Made from scratch by Joseph Kopecky</em>
-    <div id="footer-links">
-        <a href="/styleguide">Style Guide</a>
-    </div>
-</footer>
 
 
 </body>

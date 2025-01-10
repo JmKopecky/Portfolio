@@ -7,7 +7,6 @@
     <meta name="theme-color" content="#000000"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/styles/core.css">
-    <script src="/js/home.js"></script>
     <script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -70,37 +69,13 @@
         <div id="projects">
             <h1 id="projects-header">//Projects</h1>
             <div id="projects-content">
-                <div class="project-tile">
+                <div class="project-tile" th:each="project:${projects}">
                     <div class="project-image-container">
-                        <img class="project-image" alt="Condelu Meals" src="https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway">
+                        <img class="project-image" th:alt="${project.getTitle()}" th:src="${project.getImageUrl()}">
                     </div>
-                    <h3>Condelu Meals</h3>
-                    <p>A website for an imagined vegetarian restaurant with a focus on providing healthy food in an affordable and convenient manner.</p>
-                    <a class="hoveranim" href="/projects/condelu">Learn More</a>
-                </div>
-                <div class="project-tile">
-                    <div class="project-image-container">
-                        <img class="project-image" alt="Palaestra Tournaments" src="https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway">
-                    </div>
-                    <h3>Palaestra Tournaments</h3>
-                    <p>A web-based tournament hosting system that operates over LAN, allowing clients to easily compete through a browser interface.</p>
-                    <a class="hoveranim" href="/projects/palaestratournaments">Learn More</a>
-                </div>
-                <div class="project-tile">
-                    <div class="project-image-container">
-                        <img class="project-image" alt="MathMinds Test Generation" src="https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway">
-                    </div>
-                    <h3>MathMinds TestGen</h3>
-                    <p>A java app that generates a custom test from a set of template questions, with fields randomized and answers auto-calculated.</p>
-                    <a class="hoveranim" href="/projects/mathmindstestgen">Learn More</a>
-                </div>
-                <div class="project-tile">
-                    <div class="project-image-container">
-                        <img class="project-image" alt="Cacao Student Tools" src="https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway">
-                    </div>
-                    <h3>Cacao Student Tools</h3>
-                    <p>An Android application built to make the lives of students easier with automatic assignment tracking and live GPA calculation.</p>
-                    <a class="hoveranim" href="/projects/cacao">Learn More</a>
+                    <h3 th:text="${project.getTitle()}"></h3>
+                    <p th:text="${project.getShortDesc()}"></p>
+                    <a class="hoveranim" th:href="${project.getProjectUrl()}">Learn More</a>
                 </div>
             </div>
             <a href="/projects"><button>More</button></a>
@@ -139,5 +114,7 @@
 </body>
 
 <script src="/js/barba_anims.js"></script>
+<script src="/js/home.js"></script>
+
 
 </html>

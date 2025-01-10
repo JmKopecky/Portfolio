@@ -8,6 +8,9 @@ $accent: #4A9FD3;
 * {
   margin: 0;
 }
+li::marker {
+  color: $accent;
+}
 
 p, label {
   font-family: "Inter", sans-serif;
