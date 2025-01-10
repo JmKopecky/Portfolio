@@ -46,6 +46,30 @@ public class Project {
         techList.addAll(Arrays.asList(techs));
     }
 
+    public String getResourceName() {
+        String trim = title.toLowerCase().trim();
+        String whiteSpaceReplaced = "";
+        for (int i = 0; i < trim.length(); i++) {
+            String character = "" + trim.charAt(i);
+            if (!character.matches("[a-z0-9]")) {
+                whiteSpaceReplaced += "_";
+            } else {
+                whiteSpaceReplaced += character;
+            }
+        }
+        return whiteSpaceReplaced;
+    }
+
+
+    public static boolean exists(String title, ProjectRepository projectRepository) {
+        for (Project p : projectRepository.findAll()) {
+            if (p.title.equals(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 
 
