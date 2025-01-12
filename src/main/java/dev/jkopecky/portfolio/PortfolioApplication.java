@@ -19,6 +19,10 @@ public class PortfolioApplication {
         SpringApplication.run(PortfolioApplication.class, args);
     }
 
+    public static final String path = System.getProperty("user.home") + "/jk_portfolio/";
+    public static final String projectPath = path + "projects/";
+    public static final String blogPath = path + "blogs/";
+
 
 
     public static void createProjects(ProjectRepository projectRepository) {
@@ -26,12 +30,6 @@ public class PortfolioApplication {
         if (projectRepository.count() != 0) {
             return;
         }
-
-        //load from files if present
-        String path = System.getProperty("user.home") + "/jk_portfolio/";
-        String projectPath = path + "projects/";
-        String blogPath = path + "blogs/";
-
 
         //define default project templates
         ArrayList<Project> projectTemplates = new ArrayList<>();
@@ -80,25 +78,10 @@ public class PortfolioApplication {
             projectTemplates.add(cacao);
         } catch (Exception ignored) {}
 
-
+        //note: this step will fail if a change has been made to the Project.java schema (reading from an outdated file)
         //ensure default project templates have associated files for data storage.
         for (Project project : projectTemplates) {
-            try {
-                //check if project already has file. If so, read it and create a project variable, which would be saved to database
-                ObjectMapper mapper = new ObjectMapper();
-                String defaultProjectPath = projectPath + project.getResourceName() + "/";
-                Files.createDirectories(Paths.get(defaultProjectPath));
-                defaultProjectPath += project.getResourceName() + ".json";
-                File file = new File(defaultProjectPath);
-                if (file.isFile()) {
-                    //file exists. Create and save project from it instead.
-                    project = mapper.readValue(file, Project.class);
-                } else {
-                    //project does not exist, create it.
-                    mapper.writeValue(file, project);
-                }
-                projectRepository.save(project);
-            } catch (Exception ignored) {}
+            project.saveProject(projectRepository);
         }
 
     }

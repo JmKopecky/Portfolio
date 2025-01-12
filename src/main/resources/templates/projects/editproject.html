@@ -35,25 +35,44 @@
 <div data-barba="container" data-barba-namespace="page" class="page-content" style="position:absolute;">
 
 
-    <div id="projects-page">
+    <div id="edit-project-page">
 
-        <h1 id="project-header">Projects</h1>
+        <div id="project-browser">
+            <div class="project-browser-listing" th:each="project:${projects}" th:attr="onclick=|setProject('${project.title}')|" >
+                <h3 th:text="${project.displayName}"></h3>
+                <h3 th:text="${project.date}"></h3>
+            </div>
+            <div id="project-browser-create">
+                <button>Create Project</button>
+            </div>
+        </div>
 
-        <div id="project-container">
-            <div class="project-tile" th:each="project:${projects}">
-                <div class="left">
-                    <div class="project-image-container">
-                        <img class="project-image" th:alt="${project.getDisplayName()}" th:src="${project.getImageUrl()}">
-                    </div>
-                    <h3 th:text="${project.getDisplayName()}"></h3>
-                    <a th:href="${project.getProjectUrl()}"><button>Learn More</button></a>
+
+        <div id="project-edit-panel">
+            <div id="edit-content">
+                <!-- todo: popup panel full screen editing-->
+                <label for="project-edit-content">Content</label>
+                <textarea id="project-edit-content"></textarea>
+            </div>
+            <div id="edit-sidebar">
+                <div class="edit-sidebar-element">
+                    <label for="project-title-input">Title</label>
+                    <input type="text" id="project-title-input">
                 </div>
-                <div class="right">
-                    <p th:text="${project.getShortDesc()}"></p>
-                    <ul>
-                        <li th:each="tech:${project.getTechList()}"><p th:text="${tech}"></p></li>
-                    </ul>
+                <div class="edit-sidebar-element">
+                    <label for="project-desc-input">Short Desc.</label>
+                    <textarea id="project-desc-input"></textarea>
                 </div>
+                <div class="edit-sidebar-element">
+                    <label for="project-image-input">Image Url</label>
+                    <input type="text" id="project-image-input">
+                </div>
+                <div class="edit-sidebar-element">
+                    <label for="project-tech-input">Technologies</label>
+                    <textarea id="project-tech-input"></textarea>
+                </div>
+                <button id="save-edit-button" onclick="save()">Save</button>
+
             </div>
         </div>
 
@@ -74,5 +93,6 @@
 
 <script src="/js/barba_anims.js"></script>
 <script src="/js/home.js"></script>
+<script src="/js/editproject.js"></script>
 
 </html>

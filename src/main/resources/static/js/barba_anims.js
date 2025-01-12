@@ -1,4 +1,7 @@
 barba.init({
+    preventRunning: true,
+    cacheIgnore: true,
+    prefetchIgnore: true,
     transitions: [{
         name: 'main',
         sync: true,
@@ -17,4 +20,25 @@ barba.init({
             return false;
         }
     }]
+});
+
+
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+
+barba.hooks.enter( (data) => {
+    window.scrollY = 0;
+    window.scrollTo(0,0);
+})
+
+
+barba.hooks.after((data) => {
+    if ($("#edit-project-page") !== undefined) {
+        editProjectInit();
+    }
+    if ($("#home-page") !== undefined) {
+        homePageInit();
+    }
 });

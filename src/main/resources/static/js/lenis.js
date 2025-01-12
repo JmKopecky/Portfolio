@@ -1,3 +1,5 @@
+
+
 let isMobile = true;
 if (window.matchMedia("(pointer:fine)").matches) {
     isMobile = false;
@@ -15,3 +17,4 @@ if (window.matchMedia("(pointer:fine)").matches) {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Ghost714: I See You, Reclaimer.");
 })
+

@@ -13,10 +13,6 @@ public class ProjectController {
         this.projectRepository = projectRepository;
     }
 
-    @GetMapping("/projects/condelu")
-    public String condelu() {
-        return "projects/condelu";
-    }
 
     @GetMapping("/projects")
     public String projects(Model model) {

@@ -12,8 +12,15 @@ li::marker {
   color: $accent;
 }
 
-p, label {
+label {
   font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary;
+}
+p {
+  font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -23,7 +30,7 @@ accenttext {
   color: $accent;
 }
 a {
-  font-family: "Inter", sans-serif;
+  font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: italic;
@@ -49,10 +56,32 @@ a.hoveranim::after {
 a.hoveranim:hover::after {
   width: 100%;
 }
+strong {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  color: $primary;
+}
+em {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  color: $primary;
+}
 
 
 input {
-  font-family: "Inter", sans-serif;
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary;
+  background: transparent;
+  border: 1px solid $primary;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+textarea {
+  font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -68,17 +97,6 @@ h1 {
   font-weight: 700;
   font-style: normal;
   font-size: 3em;
-  color: $primary;
-}
-strong {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  color: $primary;
-}
-em {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
   color: $primary;
 }
 h2 {

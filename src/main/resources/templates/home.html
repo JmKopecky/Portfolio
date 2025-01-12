@@ -71,9 +71,9 @@
             <div id="projects-content">
                 <div class="project-tile" th:each="project:${projects}">
                     <div class="project-image-container">
-                        <img class="project-image" th:alt="${project.getTitle()}" th:src="${project.getImageUrl()}">
+                        <img class="project-image" th:alt="${project.getDisplayName()}" th:src="${project.getImageUrl()}">
                     </div>
-                    <h3 th:text="${project.getTitle()}"></h3>
+                    <h3 th:text="${project.getDisplayName()}"></h3>
                     <p th:text="${project.getShortDesc()}"></p>
                     <a class="hoveranim" th:href="${project.getProjectUrl()}">Learn More</a>
                 </div>
@@ -115,6 +115,6 @@
 
 <script src="/js/barba_anims.js"></script>
 <script src="/js/home.js"></script>
-
+<script src="/js/editproject.js"></script>
 
 </html>
