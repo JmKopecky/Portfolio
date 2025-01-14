@@ -1,0 +1,63 @@
+#view-project-page {
+  padding-top: 12vh;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-left: 4.5em;
+  margin-right: 22vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+
+  #project-title-side {
+    position: fixed;
+    transform: rotate(-90deg);
+    bottom: 0;
+    transform-origin: 0 0;
+    left: 1em;
+    width: 100vh;
+    line-height: 3em;
+    h1 {
+      font-size: 3.5em;
+    }
+  }
+
+  #project-sidebar {
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: start;
+    gap: 5vh;
+    height: 80vh;
+    width: 20vw;
+    right: 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 8vh;
+
+    * {
+      width: 100%;
+    }
+
+  }
+
+  #project-banner-image {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    aspect-ratio: 16/9;
+    height: fit-content;
+    object-fit: cover;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1em;
+    }
+  }
+
+  #project-content {
+    padding-top: 5vh;
+  }
+}

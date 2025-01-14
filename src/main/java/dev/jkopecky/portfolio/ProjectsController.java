@@ -6,10 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ProjectController {
+public class ProjectsController {
 
     ProjectRepository projectRepository;
-    public ProjectController(ProjectRepository projectRepository) {
+    public ProjectsController(ProjectRepository projectRepository) {
         this.projectRepository = projectRepository;
     }
 

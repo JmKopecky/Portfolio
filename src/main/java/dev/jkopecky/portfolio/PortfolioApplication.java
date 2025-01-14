@@ -40,7 +40,7 @@ public class PortfolioApplication {
                     "A website for an imagined vegetarian restaurant with a focus on providing healthy food in an affordable and convenient manner.",
                     "https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway",
                     "/",
-                    "/projects/condelu");
+                    "/viewproject?project=" + condelu.getTitle());
             condelu.buildTechList("Java","HTML","CSS/SCSS","Javascript","Spring Boot","Thymeleaf");
             projectTemplates.add(condelu);
         } catch (Exception ignored) {}
@@ -51,7 +51,7 @@ public class PortfolioApplication {
                     "A web-based tournament hosting system that operates over LAN, allowing clients to easily compete through a browser interface.",
                     "https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway",
                     "/",
-                    "/projects/palaestratournaments");
+                    "/viewproject?project=" + palaestra.getTitle());
             palaestra.buildTechList("Java","HTML","CSS/SCSS","Javascript","Spring Boot", "Websockets");
             projectTemplates.add(palaestra);
         } catch (Exception ignored) {}
@@ -62,7 +62,7 @@ public class PortfolioApplication {
                     "A java app that generates a custom test from a set of template questions, with fields randomized and answers auto-calculated.",
                     "https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway",
                     "/",
-                    "/projects/mathmindstestgen");
+                    "/viewproject?project=" + mathminds.getTitle());
             mathminds.buildTechList("Java","HTML","JSON");
             projectTemplates.add(mathminds);
         } catch (Exception ignored) {}
@@ -73,7 +73,7 @@ public class PortfolioApplication {
                     "An Android application built to make the lives of students easier with automatic assignment tracking and live GPA calculation.",
                     "https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway",
                     "/",
-                    "/projects/cacao");
+                    "/viewproject?project=" + cacao.getTitle());
             cacao.buildTechList("Java","XML","Android Studio");
             projectTemplates.add(cacao);
         } catch (Exception ignored) {}

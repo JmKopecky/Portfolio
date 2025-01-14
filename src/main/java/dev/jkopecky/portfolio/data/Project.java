@@ -162,6 +162,16 @@ public class Project {
     }
 
 
+    public static Project findProject(String title, ProjectRepository rep) {
+        for (Project p : rep.findAll()) {
+            if (p.title.equals(title)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+
 
 
 

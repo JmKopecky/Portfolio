@@ -114,7 +114,7 @@ public class EditProjectController {
                         data.get("desc"),
                         data.get("image"),
                         "/",
-                        "/projects/" + project.getTitle());
+                        "/viewproject?project=" + project.getTitle());
                 project.parseTech(data.get("techs"));
             } catch (Exception e) {
                 e.printStackTrace();

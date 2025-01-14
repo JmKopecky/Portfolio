@@ -23,22 +23,29 @@ barba.init({
 });
 
 
-if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-}
 
 
-barba.hooks.enter( (data) => {
-    window.scrollY = 0;
-    window.scrollTo(0,0);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+
+    barba.hooks.enter((data) => {
+        lenis.stop();
+    })
+
+    barba.hooks.after((data) => {
+        window.scrollTo(0,0);
+        lenis.start();
+        lenis.resize();
+
+        if ($("#edit-project-page") !== undefined) {
+            editProjectInit();
+        }
+        if ($("#home-page") !== undefined) {
+            homePageInit();
+        }
+    });
 })
-
-
-barba.hooks.after((data) => {
-    if ($("#edit-project-page") !== undefined) {
-        editProjectInit();
-    }
-    if ($("#home-page") !== undefined) {
-        homePageInit();
-    }
-});
