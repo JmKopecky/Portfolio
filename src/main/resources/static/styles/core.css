@@ -580,7 +580,7 @@ footer #footer-links {
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-left: 4.5em;
+  margin-left: 10vw;
   margin-right: 22vw;
   padding-left: 3vw;
   padding-right: 3vw;
@@ -630,6 +630,10 @@ footer #footer-links {
 }
 #view-project-page #project-content {
   padding-top: 5vh;
+}
+#view-project-page #project-content p, #view-project-page #project-content h1, #view-project-page #project-content h2, #view-project-page #project-content h3, #view-project-page #project-content h4, #view-project-page #project-content h5, #view-project-page #project-content h6, #view-project-page #project-content ul {
+  margin-bottom: 1.286em;
+  line-height: 1.25;
 }
 
 /*# sourceMappingURL=core.css.map */

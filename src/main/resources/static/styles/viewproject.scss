@@ -4,7 +4,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-left: 4.5em;
+  margin-left: 10vw;
   margin-right: 22vw;
   padding-left: 3vw;
   padding-right: 3vw;
@@ -59,5 +59,9 @@
 
   #project-content {
     padding-top: 5vh;
+    p, h1, h2, h3, h4, h5, h6, ul {
+      margin-bottom: 1.286em;
+      line-height: 1.25;
+    }
   }
 }
