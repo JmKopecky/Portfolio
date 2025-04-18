@@ -9,6 +9,7 @@
   padding-right: 3%;
   padding-top: 1vh;
   z-index: 999;
+  background: transparentize($secondary, 0.4);
 
   #header-right {
     display: flex;

@@ -60,7 +60,8 @@
   #project-content {
     padding-top: 5vh;
     p, h1, h2, h3, h4, h5, h6, ul {
-      margin-bottom: 1.286em;
+      margin-bottom: 1.286em !important;
+      margin-top: 1.286em !important;
       line-height: 1.25;
     }
   }

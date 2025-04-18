@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/styles/core.css">
     <script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
-    <script src="/js/lenis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/@barba/core" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
 </head>
 
 <body data-barba="wrapper">
@@ -41,10 +42,10 @@
         <div id="hero">
             <div id="hero-details">
                 <h1 id="hero-name">I'm <accenttext>Joseph Kopecky!</accenttext></h1>
-                <h6 id="hero-desc">Lorem Ipsum Dolor Sit Amet, Consectur Apdiscing Amet.</h6>
+                <h6 id="hero-desc">My Goal Is To Become a Web Developer.</h6>
             </div>
             <div id="hero-headshot">
-                <img id="hero-image" alt="headshot image" src="https://placehold.co/400/000000/FFFFFF?text=Hello+World!&font=raleway">
+                <img id="hero-image" alt="headshot image" src="/images/selfPhotoCapitol_min.JPG">
             </div>
         </div>
 
@@ -54,11 +55,38 @@
             <div id="about-content">
                 <div id="about-left">
                     <h3>My Story</h3>
-                    <p>Lorem ipsum dolor sit amet. Consectur apdiscing amet.</p>
+                    <p>
+                        <br>
+                        I'd say my career started the last week of junior high. At that point, all of my classes had effectively finished, and playing whatever computer game the school's firewall failed to block was simply insufficient to stave off boredom for eight hours a day.
+                        <br><br>
+                        The solution? Well, that <a class="hoveranim" href="https://code.org/minecraft">Code.org Minecraft game</a> we played in computer class once was fun enough. It drained perhaps an hour, but then I started exploring the website for other things to do. I found their feature for lessons — I specifically remember trying to create an ellipse, and immediately I was hooked when I saw it render on the screen.
+                        <br><br>
+                        For a few months, my favored solution to boredom was diving through online resources and textbooks. I probably alternated between trying to learn three different programming languages, before eventually I came to a realization: if I seriously wanted to learn, this strategy would not suffice. I needed to actually <em>make</em> something.
+                        <br><br>
+                        Just as initially, I resorted to Minecraft. More specifically, I set my sights on creating a mod for the game using Java. For a first project it was perhaps too ambitious — in fact I transitioned to other projects before ever finishing, focusing primarily on things I could do with Java before recently branching out to other areas. Still, this was how I found my answer for that standard get-to-know-each-other question that would always be asked:
+                        <br><br>
+                        "What do you want to do when you grow up?"
+                        <br><br>
+                        "Software Developer."
+                        <br><br>
+                        With the breadth of options in that two-word job title, it took a long time for me to settle on a specialization. The ultimate deciding factor was experience building websites for various school projects: seeing precisely what a <strong>web developer</strong> would do on a day-to-day basis was vital for allowing me to see myself in that role. Except this presented another question: how do I get from point A to point B? The solution I identified was two-pronged: get a degree in computer science, build a strong portfolio.
+                        <br><br>
+                        Welcome to the latter.
+                    </p>
                 </div>
                 <div id="about-right">
                     <h3>My Interests & Hobbies</h3>
-                    <p>Lorem ipsum dolor sit amet. Consectur apdiscing amet.</p>
+                    <ul>
+                        <li><p>
+                            <strong>Programming:</strong> It's a cliché, I know. Regardless, it seems as though I always have some project (or five!) in the works, like an ever-turning wheel of ideas that I slowly chip away at until they either cross the finish line or fail, teaching me something new along the way.
+                        </p></li>
+                        <li><p>
+                            <strong>Minecraft:</strong> Just because that first mod idea never got off the launchpad does not mean I gave up! While I don't play the game all that often anymore, I certainly spend a lot of time building mods for it. I particularly enjoyed designing an RPG system (that I already plan to iterate on), and I am currently modeling and texturing a set of new foes to add as well.
+                        </p></li>
+                        <li><p>
+                            <strong>Writing:</strong> My fingers still don't get a break because any time I spend not coding is dedicated to writing my next chapter. At the moment, I'm over two full-length novels into my rewrite of the Harry Potter series. I like to think that my specialty is writing fight scenes; magic has so much potential!
+                        </p></li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -7,6 +7,14 @@ li::marker {
   color: #4A9FD3;
 }
 
+li {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
 label {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -31,7 +39,6 @@ a {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
-  font-style: italic;
   color: #F7F4F3;
   text-decoration: none;
 }
@@ -149,6 +156,11 @@ h6 {
   color: #F7F4F3;
 }
 
+li {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 button {
   border: 1px solid #4A9FD3 !important;
   background: transparent;
@@ -220,6 +232,7 @@ body {
   padding-right: 3%;
   padding-top: 1vh;
   z-index: 999;
+  background: rgba(10, 10, 11, 0.6);
 }
 #header #header-right {
   display: flex;
@@ -318,7 +331,7 @@ footer #footer-links {
   top: 45vh;
 }
 #home-page #about #about-content {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -632,7 +645,8 @@ footer #footer-links {
   padding-top: 5vh;
 }
 #view-project-page #project-content p, #view-project-page #project-content h1, #view-project-page #project-content h2, #view-project-page #project-content h3, #view-project-page #project-content h4, #view-project-page #project-content h5, #view-project-page #project-content h6, #view-project-page #project-content ul {
-  margin-bottom: 1.286em;
+  margin-bottom: 1.286em !important;
+  margin-top: 1.286em !important;
   line-height: 1.25;
 }
 

@@ -11,6 +11,13 @@ $accent: #4A9FD3;
 li::marker {
   color: $accent;
 }
+li {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary;
+}
 
 label {
   font-family: "Inter", sans-serif;
@@ -33,7 +40,6 @@ a {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
-  font-style: italic;
   color: $primary;
   text-decoration: none;
 }
@@ -138,6 +144,11 @@ h6 {
   font-style: normal;
   font-size: 1.25em;
   color: $primary;
+}
+
+li {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 
