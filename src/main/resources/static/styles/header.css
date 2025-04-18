@@ -1,11 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  margin: 0;
+}
+
+li::marker {
+  color: #4A9FD3;
+}
+
+li {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
+label {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
+p {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
+accenttext {
+  color: #4A9FD3;
+}
+
+a {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  color: #F7F4F3;
+  text-decoration: none;
+}
+
+a.hoveranim {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: #4A9FD3;
+  text-underline-offset: 2px;
+}
+
+a.hoveranim::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #4A9FD3;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+a.hoveranim:hover::after {
+  width: 100%;
+}
+
+strong {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  color: #F7F4F3;
+}
+
+em {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  color: #F7F4F3;
+}
+
+input {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+  background: transparent;
+  border: 1px solid #F7F4F3;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+textarea {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+  background: transparent;
+  border: 1px solid #F7F4F3;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3em;
+  color: #F7F4F3;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2.5em;
+  color: #F7F4F3;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2em;
+  color: #F7F4F3;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.75em;
+  color: #F7F4F3;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 1.5em;
+  color: #F7F4F3;
+}
+
+h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  color: #F7F4F3;
+}
+
+button {
+  border: 1px solid #4A9FD3 !important;
+  background: transparent;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  color: #4A9FD3;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  transition: background 0.5s, color 0.5s;
+}
+
+button:hover, button:focus, button:active {
+  background: #4A9FD3;
+  color: #0A0A0B;
+}
+
+body {
+  background: #0A0A0B;
+}
+
+.page-content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+::-moz-selection {
+  color: #0A0A0B;
+  background: #F7F4F3;
+}
+
+::selection {
+  color: #0A0A0B;
+  background: #F7F4F3;
+}
+
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F7F4F3;
+  border-radius: 0.15em;
+}
+
+::-webkit-resizer {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+html.is-changing .transition-fade {
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
 #header {
   display: flex;
-  flex-flow: row;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1vh;
+  z-index: 999;
+  background: rgba(10, 10, 11, 0.6);
+}
+#header #header-right {
+  display: flex;
+  gap: 1em;
+}
+#header .header-link {
+  transition: color 0.5s ease-in-out;
+}
+#header .header-link * {
+  transition: color 0.5s ease-in-out;
+}
+#header .header-link:hover {
+  color: #4A9FD3 !important;
+}
+#header .header-link:hover * {
+  color: #4A9FD3 !important;
 }
 
 /*# sourceMappingURL=header.css.map */

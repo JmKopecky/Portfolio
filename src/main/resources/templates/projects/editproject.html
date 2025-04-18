@@ -6,19 +6,26 @@
     <!--<link rel="icon" type="image/x-icon" href="/images/logo.png">-->
     <meta name="theme-color" content="#000000"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles/core.css">
-    <script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/editproject.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/@barba/core" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
-<body data-barba="wrapper">
+    <script src="/js/home.js"></script>
+    <script src="/js/editproject.js"></script>
+
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="https://unpkg.com/@swup/head-plugin@2"></script>
+</head>
+<body>
 
 
 <div id="header">
@@ -33,11 +40,9 @@
 </div>
 
 
-<div data-barba="container" data-barba-namespace="page" class="page-content" style="position:absolute;">
 
-
+<main id="swup" class="page-content transition-fade">
     <div id="edit-project-page">
-
         <div id="project-browser">
             <div class="project-browser-listing" th:each="project:${projects}" th:attr="onclick=|setProject('${project.title}')|" >
                 <h3 th:text="${project.displayName}"></h3>
@@ -47,7 +52,6 @@
                 <button>Create Project</button>
             </div>
         </div>
-
 
         <div id="project-edit-panel">
             <div id="edit-content">
@@ -73,27 +77,26 @@
                     <textarea id="project-tech-input"></textarea>
                 </div>
                 <button id="save-edit-button" onclick="save()">Save</button>
-
             </div>
         </div>
+    </div>
+</main>
 
+
+
+<footer>
+    <em id="footer-message">Made from scratch by Joseph Kopecky</em>
+    <div id="footer-links">
+        <a class="hoveranim" href="/styleguide">Style Guide</a>
     </div>
 
-
-    <footer>
-        <em id="footer-message">Made from scratch by Joseph Kopecky</em>
-        <div id="footer-links">
-            <a class="hoveranim" href="/styleguide">Style Guide</a>
-        </div>
-    </footer>
-
-</div>
+    <script>
+        const swup = new Swup({
+            plugins: [new SwupHeadPlugin()]
+        });
+    </script>
+</footer>
 
 
 </body>
-
-<script src="/js/barba_anims.js"></script>
-<script src="/js/home.js"></script>
-<script src="/js/editproject.js"></script>
-
 </html>
