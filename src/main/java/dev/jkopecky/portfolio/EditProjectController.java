@@ -27,51 +27,39 @@ public class EditProjectController {
     }
 
 
-    @GetMapping("/admin/create")
-    public String create(Model model) {
-        model.addAttribute("projects", projectRepository.findAll());
-        return "projects/editproject";
+    @PostMapping("/admin/retrieveproject")
+    public ResponseEntity<HashMap<String, Object>> retreiveProjectData(@RequestParam(name = "target", required = true) String target) {
+        HashMap<String, Object> response = new HashMap<>();
+        response.put("error", "none");
+        return retrieveProject(target, response);
     }
 
-    @PostMapping("/admin/create")
-    public ResponseEntity<HashMap<String, Object>> post(@RequestBody String requestBody) {
+
+
+    @PostMapping("/admin/updateproject")
+    public ResponseEntity<HashMap<String, Object>> updateProject(@RequestBody String requestBody) {
         String title = "";
-        String mode = null;
         HashMap<String, String> data = new HashMap<>();
         HashMap<String, Object> response = new HashMap<>();
         response.put("error", "none");
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readTree(requestBody);
-            mode = node.get("mode").asText();
-            if (mode.equals("retrieve")) {
-                title = node.get("search").asText();
-            }
-            if (mode.equals("update")) {
-                title = node.get("resource").asText();
-                data.put("resource", title);
-                data.put("displayTitle", node.get("newDisplayTitle").asText());
-                data.put("desc", node.get("newDesc").asText());
-                data.put("image", node.get("newImage").asText());
-                data.put("content", node.get("newContent").asText());
-                data.put("techs", node.get("newTech").asText());
-            }
+            title = node.get("resource").asText();
+            data.put("resource", title);
+            data.put("displayTitle", node.get("newDisplayTitle").asText());
+            data.put("desc", node.get("newDesc").asText());
+            data.put("image", node.get("newImage").asText());
+            data.put("content", node.get("newContent").asText());
+            data.put("techs", node.get("newTech").asText());
         } catch (Exception e) {
             response.put("error", "invalid title");
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
 
-        if (mode != null && mode.equals("retrieve")) {
-            return retrieveProject(title, response);
-        }
-
-        if (mode != null && mode.equals("update")) {
-            return updateProject(data, response);
-        }
-
-        response.put("error", "invalid operation");
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return updateProject(data, response);
     }
+
 
 
     private ResponseEntity<HashMap<String, Object>> retrieveProject(String target, HashMap<String, Object> response) {
@@ -96,6 +84,7 @@ public class EditProjectController {
         response.put("content", project.retrieveHTML());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
 
 
     private ResponseEntity<HashMap<String, Object>> updateProject(HashMap<String, String> data, HashMap<String, Object> response) {

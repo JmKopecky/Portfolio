@@ -37,8 +37,6 @@ function homePageInit() {
         }
 
         console.log("name=" + name + "; email=" + email + "; message=" + message);
-
-
     });
 }
 

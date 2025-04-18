@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
-    <!--<link rel="stylesheet" href="/styles/adminpanel.css">-->
+    <link rel="stylesheet" href="/styles/adminpanel.css">
 
     <script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -20,8 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
-    <script src="/js/home.js"></script>
-    <script src="/js/editproject.js"></script>
+    <script src="/js/adminpanel.js"></script>
 
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/head-plugin@2"></script>
@@ -44,12 +43,73 @@
 
 <main id="swup" class="page-content transition-fade">
     <div id="admin-page">
-        <h1>Admin Console Active</h1>
-        <div id="admin-console-nav">
-            <button onclick="openProjectPanel()">Projects</button>
-            <button onclick="openBlogPanel()">Blogs</button>
-            <button onclick="openStatsPanel()">Stats</button>
+        <h1>Admin Console</h1>
+        <div id="admin-console-container">
+            <div id="admin-console-nav">
+                <div class="admin-console-nav-link active" onclick="openPanel(this)" data-for="project"><h6>Projects</h6></div>
+                <div class="admin-console-nav-link" onclick="openPanel(this)" data-for="blog"><h6>Blog</h6></div>
+                <div class="admin-console-nav-link" onclick="openPanel(this)" data-for="var"><h6>Vars</h6></div>
+                <div class="admin-console-nav-link" onclick="openPanel(this)" data-for="stats"><h6>Stats</h6></div>
+            </div>
+            <div id="admin-console-panel-container">
+
+                <div id="admin-console-panel-projects" class="panel-active panel" data-for="project">
+                    <div id="project-panel-list">
+                        <h3>Projects</h3>
+                        <div class="project-edit-listing" th:each="project:${projects}" th:attr="onclick=|setProject('${project.title}')|">
+                            <h5 th:text="${project.displayName}"></h5>
+                            <h5 th:text="${project.date}"></h5>
+                        </div>
+                    </div>
+                    <div id="project-edit-area" class="hide-project-edit">
+                        <div class="project-edit-horizontal">
+                            <div class="edit-project-element">
+                                <label for="project-title-input">Title</label>
+                                <input type="text" id="project-title-input">
+                            </div>
+                            <div class="edit-project-element">
+                                <label for="project-image-input">Image Url</label>
+                                <input type="text" id="project-image-input">
+                            </div>
+                        </div>
+                        <div class="project-edit-horizontal">
+                            <div class="edit-project-element">
+                                <label for="project-desc-input">Short Desc.</label>
+                                <textarea id="project-desc-input"></textarea>
+                            </div>
+                            <div class="edit-project-element">
+                                <label for="project-tech-input">Technologies</label>
+                                <textarea id="project-tech-input"></textarea>
+                            </div>
+                        </div>
+
+                        <div id="edit-content">
+                            <!-- todo: popup panel full screen editing-->
+                            <label for="project-edit-content">Content</label>
+                            <textarea id="project-edit-content"></textarea>
+                        </div>
+
+                        <button id="save-edit-button" onclick="projectSave()">Save</button>
+
+                        <button id="project-list-return-button" onclick="showProjectList()"><i class="fa-solid fa-bars"></i></button>
+                    </div>
+                </div>
+
+                <div id="admin-console-panel-blog" class="panel-disabled panel" data-for="blog">
+                    <p>Blogs</p>
+                </div>
+
+                <div id="admin-console-panel-vars" class="panel-disabled panel" data-for="var">
+                    <p>Vars</p>
+                </div>
+
+                <div id="admin-console-panel-stats" class="panel-disabled panel" data-for="stats">
+                    <p>Stats</p>
+                </div>
+
+            </div>
         </div>
+
     </div>
 </main>
 

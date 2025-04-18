@@ -1,0 +1,166 @@
+@import 'constants';
+
+#admin-page {
+  width: 100%;
+  height: 90vh;
+  max-height: 90vh;
+  padding-top: 10vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  #admin-console-container {
+    width: 80%;
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow: hidden;
+    #admin-console-nav {
+      height: 80%;
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: start;
+      gap: 10%;
+      padding-top: 10%;
+      padding-bottom: 10%;
+      border-radius: 1em;
+      .admin-console-nav-link {
+        width: 96%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 2em;
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
+      }
+      .admin-console-nav-link:hover {
+        background: transparentize(darken($secondary, 2%), 0.5);
+      }
+      .admin-console-nav-link.active {
+        background: darken($secondary, 2%);
+      }
+    }
+    #admin-console-panel-container {
+      background: darken($secondary, 2%);
+      border-radius: 1em;
+      flex: 5;
+      height: 90%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      overflow-y: scroll;
+      .panel {
+        width: 100%;
+        min-height: 90%;
+        padding-top: 5%;
+        flex-flow: column;
+        align-items: center;
+        justify-content: start;
+        gap: 5vh;
+      }
+      .panel-active {
+        display: flex;
+      }
+      .panel-disabled {
+        display: none;
+      }
+
+      #admin-console-panel-projects {
+        #project-panel-list {
+          width: 100%;
+          min-height: 100%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          justify-content: start;
+          gap: 5vh;
+
+          .project-edit-listing {
+            width: 80%;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em;
+            transition: background 0.5s ease-in-out;
+            border-radius: 1em;
+          }
+          .project-edit-listing:hover {
+            background: transparentize($accent, 0.3);
+          }
+        }
+        #project-panel-list.hide-project-list {
+          display: none;
+        }
+        #project-edit-area {
+          width: 100%;
+          min-height: 100%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          justify-content: start;
+          gap: 5vh;
+          padding-bottom: 2vh;
+          position: relative;
+          .project-edit-horizontal {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-evenly;
+            .edit-project-element {
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+              gap: 0.5em;
+              textarea, input {
+                width: 100%;
+              }
+              textarea {
+                line-height: 2em;
+              }
+            }
+          }
+          @media (width <= 800px) {
+            .project-edit-horizontal {
+              flex-flow: column;
+              gap: 5vh;
+            }
+          }
+          #edit-content {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            gap: 0.5em;
+            width: 80%;
+            textarea {
+              width: 100%;
+              min-height: 40vh;
+            }
+          }
+          #project-list-return-button {
+            position: absolute;
+            top: -2%;
+            right: 3%;
+            border: unset !important;
+            background: transparent !important;
+            cursor: pointer;
+            padding: unset !important;
+            i {
+              color: $accent;
+              font-size: 2em;
+              cursor: pointer;
+            }
+          }
+        }
+        #project-edit-area.hide-project-edit {
+          display: none;
+        }
+      }
+    }
+  }
+}
