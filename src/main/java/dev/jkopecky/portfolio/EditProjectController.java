@@ -27,13 +27,13 @@ public class EditProjectController {
     }
 
 
-    @GetMapping("/create")
+    @GetMapping("/admin/create")
     public String create(Model model) {
         model.addAttribute("projects", projectRepository.findAll());
         return "projects/editproject";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/admin/create")
     public ResponseEntity<HashMap<String, Object>> post(@RequestBody String requestBody) {
         String title = "";
         String mode = null;

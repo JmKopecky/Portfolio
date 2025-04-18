@@ -344,6 +344,10 @@ footer #footer-links {
   flex-flow: column;
   align-items: center;
 }
+#home-page #about #about-content #about-left #about-body-content, #home-page #about #about-content #about-right #about-body-content {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 #home-page #projects {
   padding-left: 10%;
   padding-right: 10%;
@@ -365,7 +369,7 @@ footer #footer-links {
   padding-bottom: 10vh;
 }
 #home-page #projects #projects-content .project-tile {
-  width: 40%;
+  width: 45%;
   display: flex;
   flex-flow: column;
   align-items: center;

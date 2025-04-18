@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (document.getElementById("home-page") === undefined) {
+    if (document.getElementById("home-page") === undefined || document.getElementById("home-page") === null) {
         return;
     }
 
@@ -38,9 +38,7 @@ function homePageInit() {
 
         console.log("name=" + name + "; email=" + email + "; message=" + message);
 
-        if (name.value === "Joseph Kopecky" && email.value === "joseph.m.kopecky@gmail.com" && message.value === "admin") {
-            barba.go(window.location.href + "create");
-        }
+
     });
 }
 

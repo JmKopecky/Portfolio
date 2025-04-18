@@ -14,7 +14,7 @@ function editProjectInit() {
 
 
 function setProject(title) {
-    fetch("/create", {
+    fetch("/admin/create", {
         method: "POST",
         body: JSON.stringify({
             mode: "retrieve",
@@ -69,7 +69,7 @@ function save() {
         newTech.focus();
         return;}
 
-    fetch("/create", {
+    fetch("/admin/create", {
         method: "POST",
         body: JSON.stringify({
             mode: "update",
