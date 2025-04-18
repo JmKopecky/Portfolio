@@ -22,10 +22,15 @@ public class PortfolioApplication {
     public static final String path = System.getProperty("user.home") + "/jk_portfolio/";
     public static final String projectPath = path + "projects/";
     public static final String blogPath = path + "blogs/";
+    public static final boolean isProd = false;
 
 
 
     public static void createProjects(ProjectRepository projectRepository) {
+
+        if (isProd) {
+            return;
+        }
 
         if (projectRepository.count() != 0) {
             return;

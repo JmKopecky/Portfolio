@@ -22,6 +22,7 @@
 
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/head-plugin@2"></script>
+    <script src="https://unpkg.com/@swup/scripts-plugin@2"></script>
 </head>
 <body>
 
@@ -66,12 +67,15 @@
 <footer>
     <em id="footer-message">Made from scratch by Joseph Kopecky</em>
     <div id="footer-links">
-        <a class="hoveranim" href="/styleguide">Style Guide</a>
+        <a href="/styleguide">Style Guide</a>
+        <a href="/admin/signon">Admin Panel</a>
     </div>
 
     <script>
         const swup = new Swup({
-            plugins: [new SwupHeadPlugin()]
+            plugins: [new SwupHeadPlugin(), new SwupScriptsPlugin({
+                optin: true
+            })]
         });
     </script>
 </footer>

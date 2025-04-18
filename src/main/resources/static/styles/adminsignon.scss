@@ -1,0 +1,34 @@
+@import 'constants';
+
+#signon-page {
+  width: 100%;
+  height: 90vh;
+  max-height: 90vh;
+  padding-top: 10vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  #signon-form {
+    padding: 5vh 5vw;
+    border-radius: 1em;
+    background: darken($secondary, 2%);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    .signon-elem-container {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .message-hidden {
+      visibility: hidden;
+    }
+    button {
+      margin-top: 5vh;
+    }
+  }
+}

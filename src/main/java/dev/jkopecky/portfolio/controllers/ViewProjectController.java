@@ -1,4 +1,4 @@
-package dev.jkopecky.portfolio;
+package dev.jkopecky.portfolio.controllers;
 
 import dev.jkopecky.portfolio.data.Project;
 import dev.jkopecky.portfolio.data.ProjectRepository;

@@ -1,19 +1,16 @@
-package dev.jkopecky.portfolio;
+package dev.jkopecky.portfolio.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.jkopecky.portfolio.data.Project;
 import dev.jkopecky.portfolio.data.ProjectRepository;
+import dev.jkopecky.portfolio.data.SessionToken;
+import dev.jkopecky.portfolio.data.SessionTokenRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-import javax.naming.AuthenticationException;
 import java.util.HashMap;
 
 
@@ -22,26 +19,56 @@ public class EditProjectController {
 
 
     ProjectRepository projectRepository;
-    public EditProjectController(ProjectRepository projectRepository) {
+    SessionTokenRepository sessionTokenRepository;
+    public EditProjectController(ProjectRepository projectRepository, SessionTokenRepository sessionTokenRepository) {
         this.projectRepository = projectRepository;
+        this.sessionTokenRepository = sessionTokenRepository;
     }
 
 
     @PostMapping("/admin/retrieveproject")
-    public ResponseEntity<HashMap<String, Object>> retreiveProjectData(@RequestParam(name = "target", required = true) String target) {
+    public ResponseEntity<HashMap<String, Object>> retreiveProjectData(@RequestParam(name = "target", required = true) String target, @CookieValue(value = "sessiontoken", defaultValue = "null") String sessionToken) {
         HashMap<String, Object> response = new HashMap<>();
         response.put("error", "none");
+
+        //auth check
+        boolean authenticated = false;
+        for (SessionToken token : sessionTokenRepository.findAll()) {
+            if (token.getToken().equals(sessionToken)) {
+                authenticated = true;
+            }
+        }
+        if (!authenticated) {
+            response.put("error", "unauthenticated");
+            return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+        }
+
+
         return retrieveProject(target, response);
     }
 
 
 
     @PostMapping("/admin/updateproject")
-    public ResponseEntity<HashMap<String, Object>> updateProject(@RequestBody String requestBody) {
+    public ResponseEntity<HashMap<String, Object>> updateProject(@RequestBody String requestBody, @CookieValue(value = "sessiontoken", defaultValue = "null") String sessionToken) {
         String title = "";
         HashMap<String, String> data = new HashMap<>();
         HashMap<String, Object> response = new HashMap<>();
         response.put("error", "none");
+
+        //auth check
+        boolean authenticated = false;
+        for (SessionToken token : sessionTokenRepository.findAll()) {
+            if (token.getToken().equals(sessionToken)) {
+                authenticated = true;
+            }
+        }
+        if (!authenticated) {
+            response.put("error", "unauthenticated");
+            return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+        }
+
+        //data retrieval
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readTree(requestBody);

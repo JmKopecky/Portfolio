@@ -9,16 +9,18 @@
 
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/projects.css">
+    <link rel="stylesheet" href="/styles/adminsignon.css">
 
     <script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <script data-swup-reload-script src="/js/adminsignon.js"></script>
 
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/head-plugin@2"></script>
@@ -41,25 +43,19 @@
 
 
 <main id="swup" class="page-content transition-fade">
-    <div id="projects-page">
-        <h1 id="project-header">Projects</h1>
-        <div id="project-container">
-            <div class="project-tile" th:each="project:${projects}">
-                <div class="left">
-                    <div class="project-image-container">
-                        <img class="project-image" th:alt="${project.getDisplayName()}" th:src="${project.getImageUrl()}">
-                    </div>
-                    <h3 th:text="${project.getDisplayName()}"></h3>
-                    <a th:href="${project.getProjectUrl()}"><button>Learn More</button></a>
-                </div>
-                <div class="right">
-                    <p th:text="${project.getShortDesc()}"></p>
-                    <ul>
-                        <li th:each="tech:${project.getTechList()}"><p th:text="${tech}"></p></li>
-                    </ul>
-                </div>
+    <div id="signon-page">
+        <form id="signon-form" onsubmit="return false;">
+            <div id="signon-username-container" class="signon-elem-container">
+                <label for="signon-username-input">Username</label>
+                <input type="text" id="signon-username-input">
             </div>
-        </div>
+            <div id="signon-password-container" class="signon-elem-container">
+                <label for="signon-password-input">Password</label>
+                <input type="password" id="signon-password-input">
+            </div>
+            <button onclick="sign()">Authenticate</button>
+            <p id="auth-message" class="message-hidden">Error Encountered</p>
+        </form>
     </div>
 </main>
 
