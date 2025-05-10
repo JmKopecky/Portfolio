@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/footer.css">
     <!--<link rel="stylesheet" href="/styles/contact.css">-->
 
-    <script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
+    <script data-swup-reload-script src="https://kit.fontawesome.com/2b6129ab2e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>-->
@@ -19,6 +19,8 @@
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <script data-swup-reload-script src="/js/contact.js"></script>
 
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/head-plugin@2"></script>
@@ -33,7 +35,7 @@
     </div>
     <div id="header-right">
         <a class="header-link" href="/projects">Projects</a>
-        <a class="header-link" href="/blog">Blog</a>
+        <!--TODO implmenent <a class="header-link" href="/blog">Blog</a>-->
         <a class="header-link" href="/contact"><strong>Contact</strong></a>
     </div>
 </div>
@@ -42,7 +44,21 @@
 
 <main id="swup" class="page-content transition-fade">
     <div id="contact-page">
-
+        <div id="contact-container">
+            <div id="contact-align-left">
+                <p>You can get in touch with me through this form, or my email address!</p>
+                <a href="mailto:josephkopecky@jkopecky.dev"><strong>josephkopecky@jkopecky.dev</strong></a>
+            </div>
+            <form id="contact-form" onsubmit="submitContactForm(); return false;">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" type="text">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" type="email">
+                <label for="contact-message">Message</label>
+                <input id="contact-message" type="text">
+                <button id="contact-button">Send</button>
+            </form>
+        </div>
     </div>
 </main>
 

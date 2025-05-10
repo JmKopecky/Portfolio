@@ -14,6 +14,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 @Controller
 public class AdminPanelController {
 
@@ -71,12 +76,27 @@ public class AdminPanelController {
             return new ResponseEntity<>("unauthenticated", HttpStatus.OK);
         }
 
-        if (!username.equals(System.getenv("PORTFOLIO_USR"))) {
+        boolean usernameMatch = false;
+        try {
+            File file = new File(System.getenv("PORTFOLIO_USR"));
+            if (username.equals(Files.readString(file.toPath()))) {
+                usernameMatch = true;
+            }
+        } catch (IOException e) {}
+        boolean passwordMatch = false;
+        try {
+            File file = new File(System.getenv("PORTFOLIO_PW"));
+            if (password.equals(Files.readString(file.toPath()))) {
+                passwordMatch = true;
+            }
+        } catch (IOException e) {}
+
+        if (!usernameMatch) {
             //todo: log failed attempts.
             System.out.println("Failed: " + username);
             return new ResponseEntity<>("unauthenticated", HttpStatus.OK);
         }
-        if (!password.equals(System.getenv("PORTFOLIO_PW"))) {
+        if (!passwordMatch) {
             //todo: log failed attempts.
             System.out.println("Failed: " + password);
             return new ResponseEntity<>("unauthenticated", HttpStatus.OK);

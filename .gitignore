@@ -3,6 +3,13 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+docker-compose.yml
+dockerfile
+secrets.properties
+portfolio_db_username.txt
+portfolio_db_password.txt
+portfolio_admin_password.txt
+portfolio_admin_username.txt
 
 ### STS ###
 .apt_generated

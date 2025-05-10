@@ -1,0 +1,44 @@
+services:
+  database:
+    image: mysql
+    container_name: database
+    ports:
+      - '3305'
+    environment:
+      MYSQL_USER_FILE: /run/secrets/db_username
+      MYSQL_DATABASE: portfolio_db
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+      MYSQL_RANDOM_ROOT_PASSWORD: yes
+    secrets:
+      - db_password
+      - db_username
+    volumes:
+      - database_volume:/var/lib/mysql
+  web:
+    build: .
+    command: java -jar /app.jar
+    depends_on:
+      database:
+          condition: service_started
+    ports:
+      - '443:443'
+    secrets:
+      - admin_password
+      - admin_username
+    environment:
+      PORTFOLIO_PW: /run/secrets/admin_password
+      PORTFOLIO_USR: /run/secrets/admin_username
+
+secrets:
+  db_password:
+    file: portfolio_db_password.txt
+  db_username:
+    file: portfolio_db_username.txt
+  admin_password:
+    file: portfolio_admin_password.txt
+  admin_username:
+    file: portfolio_admin_username.txt
+
+
+volumes:
+  database_volume:
