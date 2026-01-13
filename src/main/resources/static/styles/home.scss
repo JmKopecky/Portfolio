@@ -142,27 +142,25 @@
       #contact-align-left {
         display: flex;
         flex-flow: column;
+        align-items: center;
         flex: 1;
         gap: 3vh;
       }
-      #contact-form {
+      #contact-align-right {
         display: flex;
         flex-flow: column;
         align-items: center;
-        text-align: center;
         flex: 1;
-        gap: 0.5vh;
-        #contact-button {
-          margin-top: 1em;
-        }
-        input {
-          margin-bottom: 0.5em;
-        }
-        * {
-          width: 100%;
-        }
-        button {
-          width: 60%;
+        gap: 3vh;
+      }
+      div {
+        display: flex;
+        flex-flow: column;
+        gap: 0.5em;
+        text-align: center;
+        align-items: center;
+        a {
+          width: fit-content;
         }
       }
     }

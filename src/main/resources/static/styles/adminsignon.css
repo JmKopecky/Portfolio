@@ -1,22 +1,18 @@
-$secondary: #0A0A0B;
-$primary: #F7F4F3;
-$accent: #4A9FD3;
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 * {
   margin: 0;
 }
+
 li::marker {
-  color: $accent;
+  color: #4A9FD3;
 }
+
 li {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: $primary;
+  color: #F7F4F3;
 }
 
 label {
@@ -24,135 +20,148 @@ label {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 p {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 accenttext {
-  color: $accent;
+  color: #4A9FD3;
 }
+
 a {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
-  color: $primary;
+  color: #F7F4F3;
   text-decoration: none;
 }
+
 a.hoveranim {
   position: relative;
   text-decoration: underline;
-  text-decoration-color: $accent;
+  text-decoration-color: #4A9FD3;
   text-underline-offset: 2px;
 }
+
 a.hoveranim::after {
-  content: '';
+  content: "";
   width: 0%;
   height: 3px;
-  background: $accent;
+  background: #4A9FD3;
   position: absolute;
   bottom: -1px;
   left: 0;
   transition: width 0.5s ease-in-out;
 }
+
 a.hoveranim:hover::after {
   width: 100%;
 }
+
 strong {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 em {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
-  color: $primary;
+  color: #F7F4F3;
 }
-
 
 input {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: $primary;
+  color: #F7F4F3;
   background: transparent;
-  border: 1px solid $primary;
+  border: 1px solid #F7F4F3;
   border-radius: 1em;
   padding: 0.5em;
 }
+
 textarea {
   font-family: Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: $primary;
+  color: #F7F4F3;
   background: transparent;
-  border: 1px solid $primary;
+  border: 1px solid #F7F4F3;
   border-radius: 1em;
   padding: 0.5em;
 }
+
 h1 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   font-size: 2.5em;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 h2 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 650;
   font-style: normal;
   font-size: 2.25em;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 h3 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 650;
   font-style: normal;
   font-size: 2em;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 h4 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
   font-size: 1.75em;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 h5 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
   font-size: 1.5em;
-  color: $primary;
+  color: #F7F4F3;
 }
+
 h6 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-size: 1.25em;
-  color: $primary;
+  color: #F7F4F3;
 }
 
-
 button {
-  border: 1px solid $accent !important;
+  border: 1px solid #4A9FD3 !important;
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
-  color: $accent;
+  color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -160,14 +169,14 @@ button {
   font-size: 1.25em;
   transition: background 0.5s, color 0.5s;
 }
+
 button:hover, button:focus, button:active {
-  background: $accent;
-  color: $secondary;
+  background: #4A9FD3;
+  color: #0A0A0B;
 }
 
-
 body {
-  background: $secondary;
+  background: #0A0A0B;
 }
 
 .page-content {
@@ -175,40 +184,77 @@ body {
   width: 100%;
 }
 
-
 ::-moz-selection {
-  color: $secondary;
-  background: $primary;
-}
-::selection {
-  color: $secondary;
-  background: $primary;
+  color: #0A0A0B;
+  background: #F7F4F3;
 }
 
+::selection {
+  color: #0A0A0B;
+  background: #F7F4F3;
+}
 
 ::-webkit-scrollbar {
   width: 0.3em;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: $primary;
+  background: #F7F4F3;
   border-radius: 0.15em;
 }
+
 ::-webkit-resizer {
   display: none;
 }
+
 ::-webkit-scrollbar-button {
   display: none;
 }
 
-
-//swup animations
 html.is-changing .transition-fade {
   transition: opacity 0.25s;
   opacity: 1;
 }
+
 html.is-animating .transition-fade {
   opacity: 0;
 }
+
+#signon-page {
+  width: 100%;
+  height: 90vh;
+  max-height: 90vh;
+  padding-top: 10vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+#signon-page #signon-form {
+  padding: 5vh 5vw;
+  border-radius: 1em;
+  background: rgb(5.1428571429, 5.1428571429, 5.6571428571);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+}
+#signon-page #signon-form .signon-elem-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.5em;
+}
+#signon-page #signon-form .message-hidden {
+  visibility: hidden;
+}
+#signon-page #signon-form button {
+  margin-top: 5vh;
+}
+
+/*# sourceMappingURL=adminsignon.css.map */

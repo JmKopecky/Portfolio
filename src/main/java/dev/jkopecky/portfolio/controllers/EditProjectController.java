@@ -79,6 +79,7 @@ public class EditProjectController {
             data.put("image", node.get("newImage").asText());
             data.put("content", node.get("newContent").asText());
             data.put("techs", node.get("newTech").asText());
+            data.put("links", node.get("newLink").asText());
         } catch (Exception e) {
             response.put("error", "invalid title");
             return new ResponseEntity<>(response, HttpStatus.OK);
@@ -108,6 +109,7 @@ public class EditProjectController {
         response.put("shortdesc", project.getShortDesc());
         response.put("imageurl", project.getImageUrl());
         response.put("techlist", project.getTechList());
+        response.put("linklist", project.getLinkList());
         response.put("content", project.retrieveHTML());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -132,6 +134,7 @@ public class EditProjectController {
                         "/",
                         "/viewproject?project=" + project.getTitle());
                 project.parseTech(data.get("techs"));
+                project.parseLinks(data.get("links"));
             } catch (Exception e) {
                 e.printStackTrace();
                 response.put("error", "failed to create new project");
@@ -144,10 +147,12 @@ public class EditProjectController {
             project.setImageUrl(data.get("image"));
             project.writeHTML(data.get("content"));
             project.parseTech(data.get("techs"));
+            project.parseLinks(data.get("links"));
+
         }
 
         project.saveProject(projectRepository);
-
+        
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

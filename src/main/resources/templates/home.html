@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
     <script data-swup-reload-script src="/js/home.js"></script>
-    <script data-swup-reload-script src="/js/contact.js"></script>
 
     <script src="https://unpkg.com/swup@4"></script>
     <script src="https://unpkg.com/@swup/head-plugin@2"></script>
@@ -37,7 +36,7 @@
     <div id="header-right">
         <a class="header-link" href="/projects">Projects</a>
         <!--TODO implmenent <a class="header-link" href="/blog">Blog</a>-->
-        <a class="header-link" href="/contact"><strong>Contact</strong></a>
+        <a class="header-link" href="/#contact"><strong>Contact</strong></a>
     </div>
 </div>
 
@@ -61,21 +60,23 @@
                 <div id="about-left">
                     <h3>My Story</h3>
                     <p id="about-body-content">
-                        I'd say my career started the last week of junior high. At that point, all of my classes had effectively finished, and playing whatever computer game the school's firewall failed to block was simply insufficient to stave off boredom for eight hours a day.
+                        I'd say my career started the last week of junior high. At that point, all of my classes had basically finished, and playing whatever browser-based game the school's firewall didn't block had grown old.
                         <br><br>
-                        The solution? Well, that <a class="hoveranim" href="https://code.org/minecraft">Code.org Minecraft game</a> we played in computer class once was fun enough. It drained perhaps an hour, but then I started exploring the website for other things to do. I found their feature for lessons — I specifically remember trying to create an ellipse, and immediately I was hooked when I saw it render on the screen.
+                        The solution? Well, that <a class="hoveranim" href="https://code.org/minecraft" target="_blank">Code.org Minecraft game</a> we played in computer class once was fun enough. It drained about an hour, but then I started exploring the website for other things to do. Eventually, I found their feature for lessons, and I specifically remember trying to create an ellipse; when I saw it render on the screen, I was hooked.
                         <br><br>
-                        For a few months, my favored solution to boredom was diving through online resources and textbooks. I probably alternated between trying to learn three different programming languages, before eventually I came to a realization: if I seriously wanted to learn, this strategy would not suffice. I needed to actually <em>make</em> something.
+                        For a few months, I would spend hours tearing through online resources and textbooks. I probably alternated between trying to learn three different programming languages, before eventually I came to a realization: if I seriously wanted to learn, I needed to actually <em>make</em> something.
                         <br><br>
-                        Just as initially, I resorted to Minecraft. More specifically, I set my sights on creating a mod for the game using Java. For a first project it was perhaps too ambitious — in fact I transitioned to other projects before ever finishing, focusing primarily on things I could do with Java before recently branching out to other areas. Still, this was how I found my answer for that standard get-to-know-each-other question that would always be asked:
+                        Just as before, I resorted to Minecraft, setting my sights on creating a mod for the game using Java. For a first project, it was too ambitious: I transitioned to other projects before ever finishing. Still, this was how I found my answer to that standard small talk question people always seemed to ask:
                         <br><br>
                         "What do you want to do when you grow up?"
                         <br><br>
-                        "Software Developer."
+                        "I want to be a software developer."
                         <br><br>
-                        With the breadth of options in that two-word job title, it took a long time for me to settle on a specialization. The ultimate deciding factor was experience building websites for various school projects: seeing precisely what a <strong>web developer</strong> would do on a day-to-day basis was vital for allowing me to see myself in that role. Except this presented another question: how do I get from point A to point B? The solution I identified was two-pronged: get a degree in computer science, build a strong portfolio.
+                        Since then, I've come a long way. After all, now I can actually finish my projects without infinitely increasing their scope (most of the time)! I've also branched out from Minecraft mods, focusing more on building apps on a variety of platforms, be they websites, phones, or calculators.
                         <br><br>
-                        Welcome to the latter.
+                        This has been done with one thought in particular residing in the back of my head: to start that career, I'd need to convince someone to hire me. To achieve this, I decided to focus on two key areas. Earning a degree in computer science was a must, which meant I needed to excel in school to secure the financial support necessary to pay for it. Still, I knew it would also be important that I build a portfolio to demonstrate what I've built and what I've learned.
+                        <br><br>
+                        Given that you're reading this, it seems I <em>did</em> stop redesigning that portfolio eventually.
                     </p>
                 </div>
                 <div id="about-right">
@@ -88,7 +89,7 @@
                             <strong>Minecraft:</strong> Just because that first mod idea never got off the launchpad does not mean I gave up! While I don't play the game all that often anymore, I certainly spend a lot of time building mods for it. I particularly enjoyed designing an RPG system (that I already plan to iterate on), and I am currently modeling and texturing a set of new foes to add as well.
                         </p></li>
                         <li><p>
-                            <strong>Writing:</strong> My fingers still don't get a break because any time I spend not coding is dedicated to writing my next chapter. At the moment, I'm over two full-length novels into my rewrite of the Harry Potter series. I like to think that my specialty is writing fight scenes; magic has so much potential!
+                            <strong>Writing:</strong> My fingers still don't get a break because any time I spend not coding is dedicated to planning and writing my next chapter. By the time you're reading this, I will be writing my first entry into a trilogy. As my first non-derivative writing project, it is likely to come out with plenty of warts, but I'm excited to work on it nonetheless!
                         </p></li>
                     </ul>
                 </div>
@@ -112,21 +113,24 @@
             <a href="/projects"><button>More</button></a>
         </div>
         <div id="contact">
-            <h1 id="contact-header">//Contact Me</h1>
+            <h1 id="contact-header">//Get In Touch</h1>
             <div id="contact-align-container">
                 <div id="contact-align-left">
-                    <p>You can get in touch with me through this form, or my email address!</p>
-                    <a href="mailto:josephkopecky@jkopecky.dev"><strong>josephkopecky@jkopecky.dev</strong></a>
+                    <p>If you need to contact me directly</p>
+                    <div>
+                        <a class="hoveranim" href="mailto:joseph.m.kopecky@gmail.com" target="_blank">joseph.m.kopecky@gmail.com</a>
+                        <a class="hoveranim" href="tel:+19364028544" target="_blank">+1 (936) 402-8544</a>
+                    </div>
                 </div>
-                <form id="contact-form" onsubmit="return false;">
-                    <label for="contact-name">Name</label>
-                    <input id="contact-name" type="text">
-                    <label for="contact-email">Email</label>
-                    <input id="contact-email" type="email">
-                    <label for="contact-message">Message</label>
-                    <input id="contact-message" type="text">
-                    <button id="contact-button">Send</button>
-                </form>
+
+                <div id="contact-align-right">
+                    <p>Other places you can find me</p>
+                    <div>
+                        <a class="hoveranim" href="https://www.linkedin.com/in/joseph-kopecky-103ba1313" target="_blank">LinkedIn</a>
+                        <a class="hoveranim" href="https://github.com/JmKopecky" target="_blank">Github</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

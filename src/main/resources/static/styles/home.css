@@ -107,7 +107,7 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  font-size: 3em;
+  font-size: 2.5em;
   color: #F7F4F3;
 }
 
@@ -116,7 +116,7 @@ h2 {
   font-optical-sizing: auto;
   font-weight: 650;
   font-style: normal;
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #F7F4F3;
 }
 
@@ -367,28 +367,26 @@ html.is-animating .transition-fade {
 #home-page #contact #contact-align-container #contact-align-left {
   display: flex;
   flex-flow: column;
+  align-items: center;
   flex: 1;
   gap: 3vh;
 }
-#home-page #contact #contact-align-container #contact-form {
+#home-page #contact #contact-align-container #contact-align-right {
   display: flex;
   flex-flow: column;
   align-items: center;
-  text-align: center;
   flex: 1;
-  gap: 0.5vh;
+  gap: 3vh;
 }
-#home-page #contact #contact-align-container #contact-form #contact-button {
-  margin-top: 1em;
+#home-page #contact #contact-align-container div {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+  text-align: center;
+  align-items: center;
 }
-#home-page #contact #contact-align-container #contact-form input {
-  margin-bottom: 0.5em;
-}
-#home-page #contact #contact-align-container #contact-form * {
-  width: 100%;
-}
-#home-page #contact #contact-align-container #contact-form button {
-  width: 60%;
+#home-page #contact #contact-align-container div a {
+  width: fit-content;
 }
 
 /*# sourceMappingURL=home.css.map */

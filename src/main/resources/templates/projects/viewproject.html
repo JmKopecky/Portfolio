@@ -34,7 +34,7 @@
     <div id="header-right">
         <a class="header-link" href="/projects">Projects</a>
         <!--TODO implmenent <a class="header-link" href="/blog">Blog</a>-->
-        <a class="header-link" href="/contact"><strong>Contact</strong></a>
+        <a class="header-link" href="/#contact"><strong>Contact</strong></a>
     </div>
 </div>
 
@@ -47,8 +47,13 @@
         </div>
         <div id="project-sidebar">
             <p th:text="${project.getShortDesc()}"></p>
+            <h6>Tech Used</h6>
             <ul>
                 <li th:each="tech:${project.getTechList()}"><p th:text="${tech}"></p></li>
+            </ul>
+            <h6>Links</h6>
+            <ul>
+                <li th:each="link:${project.getLinkList()}" th:utext="${link}"></li>
             </ul>
         </div>
 

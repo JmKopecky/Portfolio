@@ -77,19 +77,13 @@ public class AdminPanelController {
         }
 
         boolean usernameMatch = false;
-        try {
-            File file = new File(System.getenv("PORTFOLIO_USR"));
-            if (username.equals(Files.readString(file.toPath()))) {
-                usernameMatch = true;
-            }
-        } catch (IOException e) {}
+        if (username.equals(System.getenv("PORTFOLIO_USR"))) {
+            usernameMatch = true;
+        }
         boolean passwordMatch = false;
-        try {
-            File file = new File(System.getenv("PORTFOLIO_PW"));
-            if (password.equals(Files.readString(file.toPath()))) {
-                passwordMatch = true;
-            }
-        } catch (IOException e) {}
+        if (password.equals(System.getenv("PORTFOLIO_PW"))) {
+            passwordMatch = true;
+        }
 
         if (!usernameMatch) {
             //todo: log failed attempts.

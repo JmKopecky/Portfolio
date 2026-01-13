@@ -1,0 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  margin: 0;
+}
+
+li::marker {
+  color: #4A9FD3;
+}
+
+li {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
+label {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
+p {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+}
+
+accenttext {
+  color: #4A9FD3;
+}
+
+a {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  color: #F7F4F3;
+  text-decoration: none;
+}
+
+a.hoveranim {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: #4A9FD3;
+  text-underline-offset: 2px;
+}
+
+a.hoveranim::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #4A9FD3;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+a.hoveranim:hover::after {
+  width: 100%;
+}
+
+strong {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  color: #F7F4F3;
+}
+
+em {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  color: #F7F4F3;
+}
+
+input {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+  background: transparent;
+  border: 1px solid #F7F4F3;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+textarea {
+  font-family: Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7F4F3;
+  background: transparent;
+  border: 1px solid #F7F4F3;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5em;
+  color: #F7F4F3;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2.25em;
+  color: #F7F4F3;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 2em;
+  color: #F7F4F3;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.75em;
+  color: #F7F4F3;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 1.5em;
+  color: #F7F4F3;
+}
+
+h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  color: #F7F4F3;
+}
+
+button {
+  border: 1px solid #4A9FD3 !important;
+  background: transparent;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  color: #4A9FD3;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  transition: background 0.5s, color 0.5s;
+}
+
+button:hover, button:focus, button:active {
+  background: #4A9FD3;
+  color: #0A0A0B;
+}
+
+body {
+  background: #0A0A0B;
+}
+
+.page-content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+::-moz-selection {
+  color: #0A0A0B;
+  background: #F7F4F3;
+}
+
+::selection {
+  color: #0A0A0B;
+  background: #F7F4F3;
+}
+
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F7F4F3;
+  border-radius: 0.15em;
+}
+
+::-webkit-resizer {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+html.is-changing .transition-fade {
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+#admin-page {
+  width: 100%;
+  height: 90vh;
+  max-height: 90vh;
+  padding-top: 10vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+}
+#admin-page #admin-console-container {
+  width: 80%;
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: start;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: hidden;
+}
+#admin-page #admin-console-container #admin-console-nav {
+  height: 80%;
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  border-radius: 1em;
+}
+#admin-page #admin-console-container #admin-console-nav .admin-console-nav-link {
+  width: 96%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+#admin-page #admin-console-container #admin-console-nav .admin-console-nav-link:hover {
+  background: rgba(5.1428571429, 5.1428571429, 5.6571428571, 0.5);
+}
+#admin-page #admin-console-container #admin-console-nav .admin-console-nav-link.active {
+  background: rgb(5.1428571429, 5.1428571429, 5.6571428571);
+}
+#admin-page #admin-console-container #admin-console-panel-container {
+  background: rgb(5.1428571429, 5.1428571429, 5.6571428571);
+  border-radius: 1em;
+  flex: 5;
+  height: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  overflow-y: scroll;
+}
+#admin-page #admin-console-container #admin-console-panel-container .panel {
+  width: 100%;
+  min-height: 90%;
+  padding-top: 5%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 5vh;
+}
+#admin-page #admin-console-container #admin-console-panel-container .panel-active {
+  display: flex;
+}
+#admin-page #admin-console-container #admin-console-panel-container .panel-disabled {
+  display: none;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-panel-list {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 5vh;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-panel-list .project-edit-listing {
+  width: 80%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  transition: background 0.5s ease-in-out;
+  border-radius: 1em;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-panel-list .project-edit-listing:hover {
+  background: rgba(74, 159, 211, 0.7);
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-panel-list.hide-project-list {
+  display: none;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 5vh;
+  padding-bottom: 2vh;
+  position: relative;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area .project-edit-horizontal {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area .project-edit-horizontal .edit-project-element {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.5em;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area .project-edit-horizontal .edit-project-element textarea, #admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area .project-edit-horizontal .edit-project-element input {
+  width: 100%;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area .project-edit-horizontal .edit-project-element textarea {
+  line-height: 2em;
+}
+@media (width <= 800px) {
+  #admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area .project-edit-horizontal {
+    flex-flow: column;
+    gap: 5vh;
+  }
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area #edit-content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.5em;
+  width: 80%;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area #edit-content textarea {
+  width: 100%;
+  min-height: 40vh;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area #project-list-return-button {
+  position: absolute;
+  top: -2%;
+  right: 3%;
+  border: unset !important;
+  background: transparent !important;
+  cursor: pointer;
+  padding: unset !important;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area #project-list-return-button i {
+  color: #4A9FD3;
+  font-size: 2em;
+  cursor: pointer;
+}
+#admin-page #admin-console-container #admin-console-panel-container #admin-console-panel-projects #project-edit-area.hide-project-edit {
+  display: none;
+}
+
+/*# sourceMappingURL=adminpanel.css.map */

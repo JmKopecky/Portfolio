@@ -74,6 +74,12 @@ function setProject(title) {
                 }
                 techToAdd = techToAdd.substring(0, techToAdd.length - 1);
                 $("#project-tech-input").val(techToAdd);
+                let linksToAdd = "";
+                for (const link of data["linklist"]) {
+                    linksToAdd += link + "\n";
+                }
+                linksToAdd = linksToAdd.substring(0, linksToAdd.length - 1);
+                $("#project-links-input").val(linksToAdd);
             } else {
                 console.log("error: " + data["error"]);
             }
@@ -92,6 +98,7 @@ function projectSave() {
     let newImage = $("#project-image-input");
     let newContent = $("#project-edit-content");
     let newTech = $("#project-tech-input");
+    let newLinks = $("#project-links-input");
     if (newDisplayTitle.val() === "") {
         newDisplayTitle.focus();
         return;}
@@ -107,6 +114,9 @@ function projectSave() {
     if (newTech.val() === "") {
         newTech.focus();
         return;}
+    if (newLinks.val() === "") {
+        newLinks.focus();
+        return;}
 
     fetch("/admin/updateproject", {
         method: "POST",
@@ -116,7 +126,8 @@ function projectSave() {
             newDesc: newDesc.val(),
             newImage: newImage.val(),
             newTech: newTech.val(),
-            newContent: newContent.val()
+            newContent: newContent.val(),
+            newLink: newLinks.val()
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"

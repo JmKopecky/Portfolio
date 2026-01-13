@@ -28,6 +28,8 @@ public class Project {
     private String projectUrl;
     @ElementCollection
     private List<String> techList;
+    @ElementCollection
+    private List<String> linkList;
     private String date;
 
 
@@ -127,6 +129,17 @@ public class Project {
             return false;
         }
         this.setTechList(newTech);
+        return true;
+    }
+
+    public boolean parseLinks(String links) {
+        List<String> newLinks = new ArrayList<>();
+        try {
+            newLinks.addAll(Arrays.asList(links.split("\n")));
+        } catch (Exception e) {
+            return false;
+        }
+        this.setLinkList(newLinks);
         return true;
     }
 
@@ -245,5 +258,13 @@ public class Project {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public List<String> getLinkList() {
+        return linkList;
+    }
+
+    public void setLinkList(List<String> linkList) {
+        this.linkList = linkList;
     }
 }
