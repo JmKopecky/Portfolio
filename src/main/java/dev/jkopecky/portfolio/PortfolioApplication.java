@@ -15,6 +15,7 @@ import java.util.ArrayList;
 @SpringBootApplication
 public class PortfolioApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(PortfolioApplication.class, args);
     }
@@ -22,7 +23,7 @@ public class PortfolioApplication {
     public static final String path = System.getProperty("user.home") + "/jk_portfolio/";
     public static final String projectPath = path + "projects/";
     public static final String blogPath = path + "blogs/";
-    public static final boolean isProd = false;
+    public static final boolean isProd = true;
 
 
 

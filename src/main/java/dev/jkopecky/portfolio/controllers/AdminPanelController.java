@@ -2,6 +2,7 @@ package dev.jkopecky.portfolio.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.jkopecky.portfolio.PortfolioApplication;
 import dev.jkopecky.portfolio.data.ProjectRepository;
 import dev.jkopecky.portfolio.data.SessionToken;
 import dev.jkopecky.portfolio.data.SessionTokenRepository;
@@ -77,12 +78,34 @@ public class AdminPanelController {
         }
 
         boolean usernameMatch = false;
-        if (username.equals(System.getenv("PORTFOLIO_USR"))) {
-            usernameMatch = true;
-        }
         boolean passwordMatch = false;
-        if (password.equals(System.getenv("PORTFOLIO_PW"))) {
-            passwordMatch = true;
+
+        if (PortfolioApplication.isProd) {
+            String requiredUsername;
+            String requiredPassword;
+            try {
+                requiredUsername = Files.readString(
+                        new File(System.getenv("PORTFOLIO_USR")).toPath());
+                requiredPassword = Files.readString(
+                        new File(System.getenv("PORTFOLIO_PW")).toPath());
+            } catch (IOException e1) {
+                System.out.println("Failed to read username and password from environment file. " +
+                        "Is this a development environment?");
+                return new ResponseEntity<>("unauthenticated", HttpStatus.OK);
+            }
+            if (username.equals(requiredUsername)) {
+                usernameMatch = true;
+            }
+            if (password.equals(requiredPassword)) {
+                passwordMatch = true;
+            }
+        } else {
+            if (username.equals(System.getenv("PORTFOLIO_USR"))) {
+                usernameMatch = true;
+            }
+            if (password.equals(System.getenv("PORTFOLIO_PW"))) {
+                passwordMatch = true;
+            }
         }
 
         if (!usernameMatch) {

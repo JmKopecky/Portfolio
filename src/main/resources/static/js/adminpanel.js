@@ -91,6 +91,15 @@ function setProject(title) {
 }
 
 
+function openProjectCreatePanel() {
+    const projectListContainer = document.getElementById("project-panel-list");
+    const projectEditContainer = document.getElementById("project-edit-area");
+
+    projectListContainer.classList.add("hide-project-list");
+    projectEditContainer.classList.remove("hide-project-edit");
+}
+
+
 
 function projectSave() {
     let newDisplayTitle = $("#project-title-input");
@@ -117,6 +126,10 @@ function projectSave() {
     if (newLinks.val() === "") {
         newLinks.focus();
         return;}
+
+    if (currentProject === undefined) {
+        currentProject = newDisplayTitle.val();
+    }
 
     fetch("/admin/updateproject", {
         method: "POST",
