@@ -57,6 +57,12 @@
     padding-left: 1vw;
     padding-right: 1vw;
     padding-top: 8vh;
+    #sidebar-aligner {
+      display: flex;
+      flex-flow: column;
+      gap: 2vh;
+      align-items: center;
+    }
 
     * {
       width: 100%;
@@ -85,6 +91,46 @@
     p, h1, h2, h3, h4, h5, h6, ul {
       margin-top: 1em !important;
       line-height: 1.25;
+    }
+  }
+
+  @media (width < 800px) {
+    margin-left: unset;
+    margin-right: unset;
+
+    #project-title-side {
+      position: unset;
+      transform: unset;
+      width: unset;
+      padding-bottom: 2vh;
+      text-align: center;
+    }
+
+    #project-sidebar {
+      position: unset;
+      width: unset;
+      height: unset;
+      padding-top: unset;
+      text-align: center;
+      padding-bottom: 2vh;
+
+      #sidebar-aligner {
+        flex-flow: row;
+        align-items: start;
+        width: 100%;
+        justify-content: center;
+        gap: 10%;
+        flex-wrap: wrap;
+        row-gap: 2vh;
+      }
+
+      * {
+        width: unset;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
     }
   }
 }

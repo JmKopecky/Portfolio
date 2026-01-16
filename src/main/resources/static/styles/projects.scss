@@ -14,15 +14,18 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 10%;
+    padding-right: 10%;
     gap: 10vh;
     padding-bottom: 20vh;
+    width: 80%;
     .project-tile {
-      display: flex;
-      flex-flow: row;
-      align-items: center;
-      justify-content: space-between;
+      //display: flex;
+      //flex-flow: row;
+      //align-items: center;
+      //justify-content: space-between;
+      width: 100%;
+      position: relative;
       .left {
         width: 48%;
         display: flex;
@@ -45,6 +48,33 @@
       }
       .right {
         width: 40%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        .tech-list-container {
+          padding-top: 1em;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          .tech-list-header {
+            text-decoration: underline 1px $accent;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      @media (width < 600px) {
+        .left {
+          width: unset;
+        }
+        .right {
+          position: unset;
+          width: unset;
+          transform: unset;
+        }
       }
     }
   }

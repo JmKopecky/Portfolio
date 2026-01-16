@@ -29,17 +29,7 @@
 <body>
 
 
-<div id="header">
-    <div id="header-left">
-        <a id="header-name-link" href="/"><h1 id="header-name">JK</h1></a>
-    </div>
-    <div id="header-right">
-        <a class="header-link" href="/projects">Projects</a>
-        <!--TODO implmenent <a class="header-link" href="/blog">Blog</a>-->
-        <a class="header-link" href="/#contact"><strong>Contact</strong></a>
-    </div>
-</div>
-
+<header th:replace="~{fragments/header :: header}"></header>
 
 
 <main id="swup" class="page-content transition-fade">
@@ -126,7 +116,6 @@
 <footer>
     <em id="footer-message">Made from scratch by Joseph Kopecky</em>
     <div id="footer-links">
-        <a href="/styleguide">Style Guide</a>
         <a href="/admin/signon">Admin Panel</a>
     </div>
 

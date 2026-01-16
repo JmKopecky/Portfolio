@@ -27,17 +27,7 @@
 <body>
 
 
-<div id="header">
-    <div id="header-left">
-        <a id="header-name-link" href="/"><h1 id="header-name">JK</h1></a>
-    </div>
-    <div id="header-right">
-        <a class="header-link" href="/projects">Projects</a>
-        <!--TODO implmenent <a class="header-link" href="/blog">Blog</a>-->
-        <a class="header-link" href="/#contact"><strong>Contact</strong></a>
-    </div>
-</div>
-
+<header th:replace="~{fragments/header :: header}"></header>
 
 
 <main id="swup" class="page-content transition-fade">
@@ -50,13 +40,14 @@
                         <img class="project-image" th:alt="${project.getDisplayName()}" th:src="${project.getImageUrl()}">
                     </div>
                     <h3 th:text="${project.getDisplayName()}"></h3>
+                    <div class="right">
+                        <p th:text="${project.getShortDesc()}"></p>
+                        <div class="tech-list-container">
+                            <h6 class="tech-list-header">Tech List</h6>
+                            <p th:each="tech:${project.getTechList()}" th:text="${tech}"></p>
+                        </div>
+                    </div>
                     <a th:href="${project.getProjectUrl()}"><button>Learn More</button></a>
-                </div>
-                <div class="right">
-                    <p th:text="${project.getShortDesc()}"></p>
-                    <ul>
-                        <li th:each="tech:${project.getTechList()}"><p th:text="${tech}"></p></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -68,7 +59,6 @@
 <footer>
     <em id="footer-message">Made from scratch by Joseph Kopecky</em>
     <div id="footer-links">
-        <a href="/styleguide">Style Guide</a>
         <a href="/admin/signon">Admin Panel</a>
     </div>
 

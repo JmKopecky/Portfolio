@@ -29,17 +29,7 @@
 <body>
 
 
-<div id="header">
-    <div id="header-left">
-        <a id="header-name-link" href="/"><h1 id="header-name">JK</h1></a>
-    </div>
-    <div id="header-right">
-        <a class="header-link" href="/projects">Projects</a>
-        <!--TODO implmenent <a class="header-link" href="/blog">Blog</a>-->
-        <a class="header-link" href="/#contact"><strong>Contact</strong></a>
-    </div>
-</div>
-
+<header th:replace="~{fragments/header :: header}"></header>
 
 
 <main id="swup" class="page-content transition-fade">
@@ -47,10 +37,11 @@
         <div id="hero">
             <div id="hero-details">
                 <h1 id="hero-name">I'm <accenttext>Joseph Kopecky!</accenttext></h1>
-                <h6 id="hero-desc">My Goal Is To Become a Web Developer.</h6>
+                <h6 id="hero-desc">A software developer specializing in full-stack web development.</h6>
+                <a href="/#projects"><button>Busy? Jump to Projects<i class="fa-solid fa-arrow-down"></i></button></a>
             </div>
             <div id="hero-headshot">
-                <img id="hero-image" alt="headshot image" src="/images/selfPhotoCapitol_min.JPG">
+                <img id="hero-image" alt="Joseph Kopecky headshot image" src="/images/selfPhotoCapitol_min.JPG">
             </div>
         </div>
 
@@ -58,38 +49,35 @@
             <h1 id="about-header">//About</h1>
             <div id="about-content">
                 <div id="about-left">
-                    <h3>My Story</h3>
+                    <h3 class="about-section-header">My Story</h3>
                     <p id="about-body-content">
-                        I'd say my career started the last week of junior high. At that point, all of my classes had basically finished, and playing whatever browser-based game the school's firewall didn't block had grown old.
+                        My career started the last week of middle school. At that point, all of my classes had basically finished, and playing whatever browser-based game the school's firewall didn't block had grown old.
                         <br><br>
-                        The solution? Well, that <a class="hoveranim" href="https://code.org/minecraft" target="_blank">Code.org Minecraft game</a> we played in computer class once was fun enough. It drained about an hour, but then I started exploring the website for other things to do. Eventually, I found their feature for lessons, and I specifically remember trying to create an ellipse; when I saw it render on the screen, I was hooked.
+                        The solution? Well, that <a class="hoveranim" href="https://code.org/minecraft" target="_blank">Code.org Minecraft game</a> we played in computer class once was fun enough. It kept me busy for an hour, but then I started exploring the website for other things to do. Eventually, I found their feature for lessons, and I specifically remember trying to create an ellipse; when I saw it render on the screen, I was hooked.
                         <br><br>
                         For a few months, I would spend hours tearing through online resources and textbooks. I probably alternated between trying to learn three different programming languages, before eventually I came to a realization: if I seriously wanted to learn, I needed to actually <em>make</em> something.
                         <br><br>
-                        Just as before, I resorted to Minecraft, setting my sights on creating a mod for the game using Java. For a first project, it was too ambitious: I transitioned to other projects before ever finishing. Still, this was how I found my answer to that standard small talk question people always seemed to ask:
+                        Just as before, I turned to Minecraft, setting my sights on creating a mod for the game using Java. For a first project, it was too ambitious: I moved on to other projects before ever finishing. Still, this was how I found my answer to that standard small talk question people always seemed to ask:
                         <br><br>
                         "What do you want to do when you grow up?"
                         <br><br>
                         "I want to be a software developer."
                         <br><br>
-                        Since then, I've come a long way. After all, now I can actually finish my projects without infinitely increasing their scope (most of the time)! I've also branched out from Minecraft mods, focusing more on building apps on a variety of platforms, be they websites, phones, or calculators.
+                        Since then, I've come a long way. After all, now I can actually finish my projects! I've also branched out from Minecraft mods, focusing more on building apps for a variety of platforms, be they phones, calculators, or the web.
                         <br><br>
-                        This has been done with one thought in particular residing in the back of my head: to start that career, I'd need to convince someone to hire me. To achieve this, I decided to focus on two key areas. Earning a degree in computer science was a must, which meant I needed to excel in school to secure the financial support necessary to pay for it. Still, I knew it would also be important that I build a portfolio to demonstrate what I've built and what I've learned.
+                        I've done this with one guiding thought in the back of my head: to start that career, I'd need to convince someone to hire me. To achieve this, I decided to focus on two key areas. Earning a degree in computer science was a must, which would require excelling in school to secure the financial support I'd need. Furthermore, I knew it would be important that I build a portfolio to demonstrate what I've built and what I've learned.
                         <br><br>
                         Given that you're reading this, it seems I <em>did</em> stop redesigning that portfolio eventually.
                     </p>
                 </div>
                 <div id="about-right">
-                    <h3>My Interests & Hobbies</h3>
+                    <h3 class="about-section-header">My Interests & Hobbies</h3>
                     <ul>
                         <li><p>
-                            <strong>Programming:</strong> It's a cliché, I know. Regardless, it seems as though I always have some project (or five!) in the works, like an ever-turning wheel of ideas that I slowly chip away at until they either cross the finish line or fail, teaching me something new along the way.
+                            <strong>Programming:</strong> It's a cliché, I know. Regardless, I always seem to have a project in the works. Crammed between my UT Austin coursework and my other hobbies, I hope to keep creating things worth showing off here over time.
                         </p></li>
                         <li><p>
-                            <strong>Minecraft:</strong> Just because that first mod idea never got off the launchpad does not mean I gave up! While I don't play the game all that often anymore, I certainly spend a lot of time building mods for it. I particularly enjoyed designing an RPG system (that I already plan to iterate on), and I am currently modeling and texturing a set of new foes to add as well.
-                        </p></li>
-                        <li><p>
-                            <strong>Writing:</strong> My fingers still don't get a break because any time I spend not coding is dedicated to planning and writing my next chapter. By the time you're reading this, I will be writing my first entry into a trilogy. As my first non-derivative writing project, it is likely to come out with plenty of warts, but I'm excited to work on it nonetheless!
+                            <strong>Writing:</strong> Outside of coding, I’m writing fiction; now drafting the first book in an original trilogy. It’s my first original project, and I’m excited to see it through, warts and all.
                         </p></li>
                     </ul>
                 </div>
@@ -107,7 +95,7 @@
                     </div>
                     <h3 th:text="${project.getDisplayName()}"></h3>
                     <p th:text="${project.getShortDesc()}"></p>
-                    <a class="hoveranim" th:href="${project.getProjectUrl()}">Learn More</a>
+                    <a th:href="${project.getProjectUrl()}"><button>Learn More</button></a>
                 </div>
             </div>
             <a href="/projects"><button>More</button></a>
@@ -141,7 +129,6 @@
 <footer>
     <em id="footer-message">Made from scratch by Joseph Kopecky</em>
     <div id="footer-links">
-        <a href="/styleguide">Style Guide</a>
         <a href="/admin/signon">Admin Panel</a>
     </div>
 

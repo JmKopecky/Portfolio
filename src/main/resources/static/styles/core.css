@@ -167,6 +167,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -392,6 +393,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -461,9 +463,8 @@ html.is-animating .transition-fade {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  width: 94%;
-  padding-left: 3%;
-  padding-right: 3%;
+  width: 90vw;
+  padding-left: 5vw;
   padding-top: 1vh;
   z-index: 999;
   background: rgba(10, 10, 11, 0.6);
@@ -647,6 +648,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -891,6 +893,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -982,6 +985,15 @@ html.is-animating .transition-fade {
     font-size: 4.5em;
   }
 }
+#home-page #hero #hero-details a {
+  margin-top: 5vh;
+}
+#home-page #hero #hero-details a button {
+  cursor: pointer;
+}
+#home-page #hero #hero-details a button i {
+  padding-left: 1em;
+}
 #home-page #hero #hero-headshot {
   aspect-ratio: 1/1;
   max-width: 40vh;
@@ -998,6 +1010,30 @@ html.is-animating .transition-fade {
   height: 100%;
   object-fit: cover;
   border-radius: 30%;
+}
+@media (width < 700px) {
+  #home-page #hero {
+    flex-flow: column-reverse;
+    height: unset;
+    justify-content: center;
+    padding-bottom: 10vh;
+  }
+  #home-page #hero #hero-details {
+    align-items: center;
+    text-align: center;
+  }
+  #home-page #hero #hero-details #hero-name {
+    font-size: 3em;
+  }
+  #home-page #hero #hero-headshot {
+    max-width: 60vw;
+    max-height: 60vw;
+  }
+}
+@media (width < 375px) {
+  #home-page #hero #hero-details > a > button > i {
+    display: none;
+  }
 }
 #home-page #about {
   padding-left: 10%;
@@ -1035,6 +1071,20 @@ html.is-animating .transition-fade {
 #home-page #about #about-content #about-left li, #home-page #about #about-content #about-right li {
   margin-top: 2em;
   margin-bottom: 2em;
+}
+@media (width < 650px) {
+  #home-page #about {
+    flex-flow: column;
+    padding-top: 10vh;
+  }
+  #home-page #about #about-header {
+    position: unset;
+    padding-bottom: 5vh;
+    align-self: center;
+  }
+  #home-page #about .about-section-header {
+    align-self: start;
+  }
 }
 #home-page #projects {
   padding-left: 10%;
@@ -1077,6 +1127,21 @@ html.is-animating .transition-fade {
   object-fit: cover;
   border-radius: 1em;
 }
+@media (width < 650px) {
+  #home-page #projects {
+    padding-top: 10vh;
+  }
+  #home-page #projects #projects-content {
+    flex-flow: column;
+  }
+  #home-page #projects #projects-content .project-tile {
+    width: 85%;
+    padding: 1em 0.5em;
+    border-radius: 1em;
+    gap: 0.5em;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
 #home-page #contact {
   width: 70%;
   display: flex;
@@ -1117,6 +1182,11 @@ html.is-animating .transition-fade {
 }
 #home-page #contact #contact-align-container div a {
   width: fit-content;
+}
+@media (width < 600px) {
+  #home-page #contact #contact-align-container {
+    flex-flow: column;
+  }
 }
 
 * {
@@ -1281,6 +1351,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -1514,6 +1585,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -1590,16 +1662,15 @@ html.is-animating .transition-fade {
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 10%;
+  padding-right: 10%;
   gap: 10vh;
   padding-bottom: 20vh;
+  width: 80%;
 }
 #projects-page #project-container .project-tile {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  position: relative;
 }
 #projects-page #project-container .project-tile .left {
   width: 48%;
@@ -1623,6 +1694,33 @@ html.is-animating .transition-fade {
 }
 #projects-page #project-container .project-tile .right {
   width: 40%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+#projects-page #project-container .project-tile .right .tech-list-container {
+  padding-top: 1em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#projects-page #project-container .project-tile .right .tech-list-container .tech-list-header {
+  text-decoration: underline 1px #4A9FD3;
+  margin-bottom: 5px;
+}
+@media (width < 600px) {
+  #projects-page #project-container .project-tile .left {
+    width: unset;
+  }
+  #projects-page #project-container .project-tile .right {
+    position: unset;
+    width: unset;
+    transform: unset;
+  }
 }
 
 * {
@@ -1787,6 +1885,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -1906,6 +2005,12 @@ html.is-animating .transition-fade {
   padding-right: 1vw;
   padding-top: 8vh;
 }
+#view-project-page #project-sidebar #sidebar-aligner {
+  display: flex;
+  flex-flow: column;
+  gap: 2vh;
+  align-items: center;
+}
 #view-project-page #project-sidebar * {
   width: 100%;
 }
@@ -1930,6 +2035,43 @@ html.is-animating .transition-fade {
 #view-project-page #project-content p, #view-project-page #project-content h1, #view-project-page #project-content h2, #view-project-page #project-content h3, #view-project-page #project-content h4, #view-project-page #project-content h5, #view-project-page #project-content h6, #view-project-page #project-content ul {
   margin-top: 1em !important;
   line-height: 1.25;
+}
+@media (width < 800px) {
+  #view-project-page {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  #view-project-page #project-title-side {
+    position: unset;
+    transform: unset;
+    width: unset;
+    padding-bottom: 2vh;
+    text-align: center;
+  }
+  #view-project-page #project-sidebar {
+    position: unset;
+    width: unset;
+    height: unset;
+    padding-top: unset;
+    text-align: center;
+    padding-bottom: 2vh;
+  }
+  #view-project-page #project-sidebar #sidebar-aligner {
+    flex-flow: row;
+    align-items: start;
+    width: 100%;
+    justify-content: center;
+    gap: 10%;
+    flex-wrap: wrap;
+    row-gap: 2vh;
+  }
+  #view-project-page #project-sidebar * {
+    width: unset;
+  }
+  #view-project-page #project-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=core.css.map */

@@ -161,6 +161,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -230,9 +231,8 @@ html.is-animating .transition-fade {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  width: 94%;
-  padding-left: 3%;
-  padding-right: 3%;
+  width: 90vw;
+  padding-left: 5vw;
   padding-top: 1vh;
   z-index: 999;
   background: rgba(10, 10, 11, 0.6);

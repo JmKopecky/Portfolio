@@ -161,6 +161,7 @@ button {
   background: transparent;
   border-radius: 1em;
   padding: 0.5em 1em;
+  cursor: pointer;
   color: #4A9FD3;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -252,6 +253,15 @@ html.is-animating .transition-fade {
     font-size: 4.5em;
   }
 }
+#home-page #hero #hero-details a {
+  margin-top: 5vh;
+}
+#home-page #hero #hero-details a button {
+  cursor: pointer;
+}
+#home-page #hero #hero-details a button i {
+  padding-left: 1em;
+}
 #home-page #hero #hero-headshot {
   aspect-ratio: 1/1;
   max-width: 40vh;
@@ -268,6 +278,30 @@ html.is-animating .transition-fade {
   height: 100%;
   object-fit: cover;
   border-radius: 30%;
+}
+@media (width < 700px) {
+  #home-page #hero {
+    flex-flow: column-reverse;
+    height: unset;
+    justify-content: center;
+    padding-bottom: 10vh;
+  }
+  #home-page #hero #hero-details {
+    align-items: center;
+    text-align: center;
+  }
+  #home-page #hero #hero-details #hero-name {
+    font-size: 3em;
+  }
+  #home-page #hero #hero-headshot {
+    max-width: 60vw;
+    max-height: 60vw;
+  }
+}
+@media (width < 375px) {
+  #home-page #hero #hero-details > a > button > i {
+    display: none;
+  }
 }
 #home-page #about {
   padding-left: 10%;
@@ -305,6 +339,20 @@ html.is-animating .transition-fade {
 #home-page #about #about-content #about-left li, #home-page #about #about-content #about-right li {
   margin-top: 2em;
   margin-bottom: 2em;
+}
+@media (width < 650px) {
+  #home-page #about {
+    flex-flow: column;
+    padding-top: 10vh;
+  }
+  #home-page #about #about-header {
+    position: unset;
+    padding-bottom: 5vh;
+    align-self: center;
+  }
+  #home-page #about .about-section-header {
+    align-self: start;
+  }
 }
 #home-page #projects {
   padding-left: 10%;
@@ -347,6 +395,21 @@ html.is-animating .transition-fade {
   object-fit: cover;
   border-radius: 1em;
 }
+@media (width < 650px) {
+  #home-page #projects {
+    padding-top: 10vh;
+  }
+  #home-page #projects #projects-content {
+    flex-flow: column;
+  }
+  #home-page #projects #projects-content .project-tile {
+    width: 85%;
+    padding: 1em 0.5em;
+    border-radius: 1em;
+    gap: 0.5em;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
 #home-page #contact {
   width: 70%;
   display: flex;
@@ -387,6 +450,11 @@ html.is-animating .transition-fade {
 }
 #home-page #contact #contact-align-container div a {
   width: fit-content;
+}
+@media (width < 600px) {
+  #home-page #contact #contact-align-container {
+    flex-flow: column;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */
