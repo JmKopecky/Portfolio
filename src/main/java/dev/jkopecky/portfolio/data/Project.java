@@ -31,6 +31,8 @@ public class Project {
     @ElementCollection
     private List<String> linkList;
     private String date;
+    @Lob
+    private String content;
 
 
 
@@ -77,19 +79,7 @@ public class Project {
     }
 
     public String retrieveHTML() {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            String target = PortfolioApplication.projectPath + toResource(title) + "/" + toResource(title) + "_page.txt";
-            File file = new File(target);
-            if (file.isFile()) {
-                return Files.readString(file.toPath());
-            } else {
-                //project does not exist, create it.
-                return "file does not exist";
-            }
-        } catch (Exception e) {
-            return "exception encountered retrieving project (" + toResource(title) + ") html";
-        }
+        return content;
     }
 
 
@@ -103,22 +93,9 @@ public class Project {
     }
 
 
-    public boolean writeHTML(String html) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            String target = PortfolioApplication.projectPath + toResource(title) + "/" + toResource(title) + "_page.txt";
-            File file = new File(target);
-            if (file.isFile()) {
-                Files.write(Paths.get(target), html.getBytes());
-                return true;
-            } else {
-                //project does not exist, create it.
-                return false;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+    public void writeHTML(String html, ProjectRepository projectRepository) {
+        content = html;
+        projectRepository.save(this);
     }
 
     public boolean parseTech(String techs) {
@@ -144,34 +121,8 @@ public class Project {
     }
 
 
-    public boolean saveProject(ProjectRepository projectRepository) {
-        String projectPath = PortfolioApplication.projectPath;
-        try {
-            //check if project already has file. If so, read it and create a project variable, which would be saved to database
-            ObjectMapper mapper = new ObjectMapper();
-            String defaultProjectPath = projectPath + Project.toResource(getTitle()) + "/";
-            Files.createDirectories(Paths.get(defaultProjectPath));
-            String jsonPath = defaultProjectPath + Project.toResource(getTitle()) + ".json";
-            File json = new File(jsonPath);
-            if (json.isFile()) {
-                //file exists. Create and save project from it instead.
-                //todo: replace with: project = mapper.readValue(json, Project.class);
-                mapper.writeValue(json, this);
-            } else {
-                //project does not exist, create it.
-                mapper.writeValue(json, this);
-            }
-            String htmlPath = defaultProjectPath + Project.toResource(getTitle()) + "_page.txt";
-            File page = new File(htmlPath);
-            if (!page.isFile()) {
-                page.createNewFile();
-            }
-            projectRepository.save(this);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+    public void saveProject(ProjectRepository projectRepository) {
+        projectRepository.save(this);
     }
 
 

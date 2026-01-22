@@ -145,7 +145,7 @@ public class EditProjectController {
             project.setDisplayName(data.get("displayTitle"));
             project.setShortDesc(data.get("desc"));
             project.setImageUrl(data.get("image"));
-            project.writeHTML(data.get("content"));
+            project.writeHTML(data.get("content"), projectRepository);
             project.parseTech(data.get("techs"));
             project.parseLinks(data.get("links"));
 
